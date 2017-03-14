@@ -1,0 +1,40 @@
+package com.example.dimitrikeller.tpandroid.Manager;
+
+import com.example.dimitrikeller.tpandroid.Entite.PreferencePays;
+
+import java.util.ArrayList;
+
+/**
+ * Created by Marianne on 2017-03-13.
+ */
+
+public class ManagerPreferencePays {
+
+    private static ArrayList<PreferencePays> listePreferencePays;
+
+    public static void init(){
+        listePreferencePays = new ArrayList<>();
+        listePreferencePays.add(new PreferencePays(10, 10));
+        listePreferencePays.add(new PreferencePays(20, 20));
+        listePreferencePays.add(new PreferencePays(30, 30));
+        listePreferencePays.add(new PreferencePays(40, 40));
+
+    }
+
+    public static ArrayList<PreferencePays> getAll(){
+        if(listePreferencePays == null)
+            init();
+        return listePreferencePays;
+    }
+
+    public static PreferencePays getById(int idCompare){
+        PreferencePays retour = null;
+        for (PreferencePays p :
+                listePreferencePays) {
+            if(p.getIdPreference() == idCompare)
+                retour = p;
+        }
+        return  retour;
+    }
+
+}
