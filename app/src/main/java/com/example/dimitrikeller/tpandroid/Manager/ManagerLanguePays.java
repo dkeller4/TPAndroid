@@ -28,11 +28,22 @@ public class ManagerLanguePays {
         return listeLanguePays;
     }
 
-    public static LanguePays getById(int idCompare){
+    public static LanguePays getByIdLangue(int idCompare){
         LanguePays retour = null;
         for (LanguePays l :
                 listeLanguePays) {
             if(l.getIdLangue() == idCompare)
+                retour = l;
+        }
+        return  retour;
+    }
+
+
+    public static LanguePays getByIdPays(int idCompare){
+        LanguePays retour = null;
+        for (LanguePays l :
+                listeLanguePays) {
+            if(l.getIdPays() == idCompare)
                 retour = l;
         }
         return  retour;

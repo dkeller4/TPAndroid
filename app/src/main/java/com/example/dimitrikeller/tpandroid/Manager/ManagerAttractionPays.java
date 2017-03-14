@@ -29,7 +29,7 @@ public class ManagerAttractionPays {
         return listeAttraction;
     }
 
-    public static AttractionPays getById(int idCompare){
+    public static AttractionPays getByIdAttraction(int idCompare){
         AttractionPays retour = null;
         for (AttractionPays a :
                 listeAttraction) {
@@ -38,5 +38,16 @@ public class ManagerAttractionPays {
         }
         return  retour;
     }
+
+    public static AttractionPays getByIdPays(int idCompare){
+        AttractionPays retour = null;
+        for (AttractionPays a :
+                listeAttraction) {
+            if(a.getIdPays() == idCompare)
+                retour = a;
+        }
+        return  retour;
+    }
+
 
 }

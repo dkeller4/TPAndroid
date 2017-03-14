@@ -26,11 +26,21 @@ public class ManagerVoyageFutur {
         return listeVoyageFutur;
     }
 
-    public static VoyageFutur getById(int idCompare){
+    public static VoyageFutur getByIdVoyageFutur(int idCompare){
         VoyageFutur retour = null;
         for (VoyageFutur v :
                 listeVoyageFutur) {
             if(v.getIdVoyageFutur() == idCompare)
+                retour = v;
+        }
+        return  retour;
+    }
+
+    public static VoyageFutur getByIdVoyageur(int idCompare){
+        VoyageFutur retour = null;
+        for (VoyageFutur v :
+                listeVoyageFutur) {
+            if(v.getIdVoyageurPrincipal() == idCompare)
                 retour = v;
         }
         return  retour;

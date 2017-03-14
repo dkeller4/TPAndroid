@@ -27,11 +27,22 @@ public class ManagerPreferencePays {
         return listePreferencePays;
     }
 
-    public static PreferencePays getById(int idCompare){
+    public static PreferencePays getByIdPreference(int idCompare){
         PreferencePays retour = null;
         for (PreferencePays p :
                 listePreferencePays) {
             if(p.getIdPreference() == idCompare)
+                retour = p;
+        }
+        return  retour;
+    }
+
+
+    public static PreferencePays getByIdPays(int idCompare){
+        PreferencePays retour = null;
+        for (PreferencePays p :
+                listePreferencePays) {
+            if(p.getIdPays() == idCompare)
                 retour = p;
         }
         return  retour;

@@ -20,7 +20,7 @@ public class ManagerPays {
         listePays.add(new Pays(10, "Canada", 33000000, "Amérique du Nord", R.drawable.drap_canada, R.drawable.pays_canada, ManagerLanguePays.getAll(), ManagerPreferencePays.getAll(), ManagerAttractionPays.getAll() ));
         listePays.add(new Pays(10, "France", 33000000, "Europe", R.drawable.drap_france, R.drawable.pays_france, ManagerLanguePays.getAll(), ManagerPreferencePays.getAll(), ManagerAttractionPays.getAll() ));
         listePays.add(new Pays(10, "Japon", 33000000, "Asie", R.drawable.drap_japan, R.drawable.pays_japon, ManagerLanguePays.getAll(), ManagerPreferencePays.getAll(), ManagerAttractionPays.getAll() ));
-        listePays.add(new Pays(10, "Brésil", 33000000, "Amérique du Sud", R.drawable.drap_brazil, R.drawable.pays_brésil, ManagerLanguePays.getAll(), ManagerPreferencePays.getAll(), ManagerAttractionPays.getAll() ));
+        listePays.add(new Pays(10, "Brésil", 33000000, "Amérique du Sud", R.drawable.drap_brazil, R.drawable.pays_bresil, ManagerLanguePays.getAll(), ManagerPreferencePays.getAll(), ManagerAttractionPays.getAll() ));
 
     }
 

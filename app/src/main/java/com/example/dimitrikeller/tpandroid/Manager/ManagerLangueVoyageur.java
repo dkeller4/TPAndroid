@@ -28,7 +28,7 @@ public class ManagerLangueVoyageur {
         return listeLangueVoyageur;
     }
 
-    public static LangueVoyageur getById(int idCompare){
+    public static LangueVoyageur getByIdLangue(int idCompare){
         LangueVoyageur retour = null;
         for (LangueVoyageur l :
                 listeLangueVoyageur) {
@@ -38,6 +38,15 @@ public class ManagerLangueVoyageur {
         return  retour;
     }
 
+    public static LangueVoyageur getByIdVoyageur(int idCompare){
+        LangueVoyageur retour = null;
+        for (LangueVoyageur l :
+                listeLangueVoyageur) {
+            if(l.getIdVoyageur() == idCompare)
+                retour = l;
+        }
+        return  retour;
+    }
 
 
 }

@@ -29,7 +29,7 @@ public class ManagerCompagnonVoyageFutur {
         return listeCompagnon;
     }
 
-    public static CompagnonVoyageFutur getById(int idCompare){
+    public static CompagnonVoyageFutur getByIdVoyageurCompagnon(int idCompare){
         CompagnonVoyageFutur retour = null;
         for (CompagnonVoyageFutur c :
                 listeCompagnon) {
@@ -38,5 +38,16 @@ public class ManagerCompagnonVoyageFutur {
         }
         return  retour;
     }
+
+    public static CompagnonVoyageFutur getByIdVoyageFutur(int idCompare){
+        CompagnonVoyageFutur retour = null;
+        for (CompagnonVoyageFutur c :
+                listeCompagnon) {
+            if(c.getIdVoyageFutur() == idCompare)
+                retour = c;
+        }
+        return  retour;
+    }
+
 
 }
