@@ -1,3 +1,27 @@
 <resources>
-    <string name="app_name">TPAndroid</string>
+    <string name="app_name">CompaVoyage</string>
+
+
+    <!--Activity Ajout des voyages passés-->
+
+    <string name="ajout_voyage_passe_titre">Ajouter vos voyages passés</string>
+    <string name="ajout_voyage_passe_filtre">Filtrer par continent</string>
+    <string name="ajout_voyage_passe_selection">Sélectionner les pays visités</string>
+
+    <string-array name="listeRegionMonde">
+        <item>Monde</item>
+        <item>Afrique</item>
+        <item>Amérique centrale et Caraïbes</item>
+        <item>Amérique du Nord</item>
+        <item>Amérique du sud</item>
+        <item>Asie</item>
+        <item>Asie du sud est</item>
+        <item>Communauté des États indépendants</item>
+        <item>Europe</item>
+        <item>Moyen-Orient</item>
+        <item>Océanie</item>
+        <item>Région de l\'Arctique</item>
+    </string-array>
+
+
 </resources>

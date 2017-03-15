@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#7CB3FF</color>
+    <color name="colorPrimaryDark">#002E6E</color>
+    <color name="colorAccent">#FFC970</color>
+
+    *** Primary color:
+
+    <color name="PrimShade0">#1678FF</color>
+    <color name="PrimShade1">#ABCFFF</color>
+    <color name="PrimShade2">#7CB3FF</color>
+    <color name="PrimShade3">#003C8F</color>
+    <color name="PrimShade4">#002E6E</color>
+
+    *** Complement color:
+
+    <color name="CompShade0">#FF9F00</color>
+    <color name="CompShade1">#FFDDA4</color>
+    <color name="CompShade2">#FFC970</color>
+    <color name="CompShade3">#D98700</color>
+    <color name="CompShade4">#A76800</color>
+
+
 </resources>

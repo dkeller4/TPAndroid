@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dimitrikeller.tpandroid.Activity.Ajout_voyage_passe"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ajout_voyage_passe_titre"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ajout_voyage_passe_filtre"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textAllCaps="true"/>
+
+    <Spinner
+        android:id="@+id/ajout_voyage_paasse_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dropDownSelector="@color/colorAccent"
+        android:popupBackground="@color/colorPrimary"
+        android:spinnerMode="dropdown" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ajout_voyage_passe_selection"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:layout_weight="25"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ajouter"
+            android:id="@+id/avp_ajouter_voyage"
+            android:layout_weight="75"/>
+
+    </LinearLayout>
+    <GridView
+        android:id="@+id/ajout_voyage_passe_drapeaux"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        android:fastScrollEnabled="false"
+        android:isScrollContainer="false"
+        android:keepScreenOn="false"
+        android:numColumns="4"
+        android:nestedScrollingEnabled="true"
+        />
+
+
+
+</LinearLayout>
