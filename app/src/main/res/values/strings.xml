@@ -22,6 +22,17 @@
         <item>Océanie</item>
         <item>Région de l\'Arctique</item>
     </string-array>
+    <string name="title_activity_ajout_voyage_futur">AjoutVoyageFutur</string>
+
+
+
+    <!--Activity Ajout des voyages Futurs-->
+    <string name="ajout_voyage_futur_titre">Ajouter votre projet de voyage</string>
+    <string name="ajout_voyage_futur_selection">Où voulez-vous partir ?</string>
+    <string name="ajout_voyage_futur_depart">Date de départ</string>
+    <string name="ajout_voyage_futur_retour">Date de retour</string>
+
+
 
 
 </resources>

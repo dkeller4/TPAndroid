@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dimitrikeller.tpandroid.Activity.AjoutVoyageFutur"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ajout_voyage_futur_titre"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ajout_voyage_futur_selection"
+                android:textSize="24sp"
+                android:textAlignment="center"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/avf_autoCompleteTextView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:completionThreshold="1"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ajout_voyage_futur_depart"
+                android:textSize="24sp"
+                android:textAlignment="center"/>
+
+            <DatePicker
+                android:id="@+id/avf_dDepart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></DatePicker>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ajout_voyage_futur_retour"
+                android:textSize="24sp"
+                android:textAlignment="center"/>
+
+            <DatePicker
+                android:id="@+id/avf_dRetour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+            </DatePicker>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/avf_flex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Les dates sont flexibles"
+                    android:layout_weight="50"/>
+                <CheckBox
+                    android:id="@+id/avf_compa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Partir en groupe"
+                    android:layout_weight="50"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/avf_btn_trouver"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Trouver un compagnon"
+                    android:layout_weight="50"
+                    android:background="@color/colorAccent"
+                    android:layout_margin="5sp"/>
+                <Button
+                    android:id="@+id/avf_btn_ajouter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ajouter un compagnon"
+                    android:layout_weight="50"
+                    android:background="@color/colorAccent"
+                    android:layout_margin="5sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
+
