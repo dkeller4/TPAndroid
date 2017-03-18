@@ -8,6 +8,10 @@ public class PreferenceVoyageur {
 
     private int idVoyageur, idPreference;
 
+    public PreferenceVoyageur(){
+
+    }
+
     public PreferenceVoyageur(int idVoyageur, int idPreference) {
         this.idVoyageur = idVoyageur;
         this.idPreference = idPreference;

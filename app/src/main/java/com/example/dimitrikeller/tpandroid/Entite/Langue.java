@@ -9,6 +9,10 @@ public class Langue {
     private int idLangue;
     private String langue;
 
+    public Langue(){
+
+    }
+
     public Langue(int idLangue, String langue) {
         this.idLangue = idLangue;
         this.langue = langue;

@@ -1,14 +1,10 @@
 package com.example.dimitrikeller.tpandroid.Activity;
 
 import android.content.Context;
-import android.database.DataSetObserver;
 import android.graphics.Color;
-import android.support.constraint.solver.widgets.ConstraintHorizontalLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
@@ -18,7 +14,7 @@ import android.widget.SpinnerAdapter;
 import com.example.dimitrikeller.tpandroid.Entite.Pays;
 import com.example.dimitrikeller.tpandroid.Manager.ManagerPays;
 import com.example.dimitrikeller.tpandroid.R;
-import com.example.dimitrikeller.tpandroid.VuePerso.Vp_ajout_voyage_passe_drapeau;
+import com.example.dimitrikeller.tpandroid.Adapter.ListePaysDrapeauxAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +28,7 @@ public class Ajout_voyage_passe extends AppCompatActivity {
     String regionSelect;
     List<Pays> lesPays;
     List<Pays> lesPaysSelect;
-    Vp_ajout_voyage_passe_drapeau adaptGv;
+    ListePaysDrapeauxAdapter adaptGv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +51,7 @@ public class Ajout_voyage_passe extends AppCompatActivity {
         gv.setColumnWidth(wScreen/3);
         lesPays = ManagerPays.getAll();
         lesPaysSelect = new ArrayList<Pays>();
-        adaptGv = new Vp_ajout_voyage_passe_drapeau(ctx, R.layout.vue_perso_ajout_voyage_passe,lesPays);
+        adaptGv = new ListePaysDrapeauxAdapter(ctx, R.layout.vue_perso_ajout_voyage_passe,lesPays);
         gv.setAdapter(adaptGv);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

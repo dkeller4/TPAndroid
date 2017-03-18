@@ -17,6 +17,10 @@ public class VoyageFutur {
     private Boolean estComplet;
     private ArrayList<CompagnonVoyageFutur> listeCompagnonVoyageFutur;
 
+    public VoyageFutur(){
+
+    }
+
     public VoyageFutur(int idVoyageFutur, int idPays, int idVoyageurPrincipal, String dateDepart, String dateRetour, Boolean estFlexible, Boolean estComplet, ArrayList<CompagnonVoyageFutur> listeCompagnonVoyageFutur) {
         this.idVoyageFutur = idVoyageFutur;
         this.idPays = idPays;

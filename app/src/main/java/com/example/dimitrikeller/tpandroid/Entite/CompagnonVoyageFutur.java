@@ -8,6 +8,10 @@ public class CompagnonVoyageFutur {
 
     private int idVoyageFutur, idVoyageurCompagnon;
 
+    public CompagnonVoyageFutur(){
+
+    }
+
     public CompagnonVoyageFutur(int idVoyageFutur, int idVoyageurCompagnon) {
         this.idVoyageFutur = idVoyageFutur;
         this.idVoyageurCompagnon = idVoyageurCompagnon;

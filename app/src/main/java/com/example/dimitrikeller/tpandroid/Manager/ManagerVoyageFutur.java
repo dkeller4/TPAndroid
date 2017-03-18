@@ -15,7 +15,7 @@ public class ManagerVoyageFutur {
     public static void init(){
         listeVoyageFutur = new ArrayList<>();
         listeVoyageFutur.add(new VoyageFutur(10, 10, 10, "31/12/2016", "30/01/2017", true, false, ManagerCompagnonVoyageFutur.getAll()));
-        listeVoyageFutur.add(new VoyageFutur(10, 20, 20, "31/12/2016", "30/01/2017", true, false, ManagerCompagnonVoyageFutur.getAll()));
+        listeVoyageFutur.add(new VoyageFutur(20, 20, 10, "31/12/2016", "30/01/2017", true, false, ManagerCompagnonVoyageFutur.getAll()));
         listeVoyageFutur.add(new VoyageFutur(30, 30, 30, "31/12/2016", "30/01/2017", true, false, ManagerCompagnonVoyageFutur.getAll()));
         listeVoyageFutur.add(new VoyageFutur(40, 40, 40, "31/12/2016", "30/01/2017", true, false, ManagerCompagnonVoyageFutur.getAll()));
     }

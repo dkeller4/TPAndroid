@@ -9,6 +9,10 @@ public class Preference {
     private int idPreference;
     private String type;
 
+    public Preference(){
+
+    }
+
     public Preference(int idPreference, String type) {
         this.idPreference = idPreference;
         this.type = type;

@@ -8,6 +8,10 @@ public class PreferencePays {
 
     private int idPreference, idPays;
 
+    public PreferencePays(){
+
+    }
+
     public PreferencePays(int idPreference, int idPays) {
         this.idPreference = idPreference;
         this.idPays = idPays;

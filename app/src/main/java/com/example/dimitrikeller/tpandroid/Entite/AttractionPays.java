@@ -8,6 +8,10 @@ public class AttractionPays {
 
     private int idPays, idAttraction;
 
+    public  AttractionPays(){
+
+    }
+
     public AttractionPays(int idPays, int idAttraction) {
         this.idPays = idPays;
         this.idAttraction = idAttraction;

@@ -2,7 +2,9 @@ package com.example.dimitrikeller.tpandroid.VuePerso;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.AttributeSet;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -31,8 +33,8 @@ public class Vp_profil_pays_bref extends LinearLayout{
     LinearLayout vp_ppb_ll_horizontal1, vp_ppb_ll_horizontal2, vp_ppb_ll_continent, vp_ppb_ll_capitale, vp_ppb_ll_population, vp_ppb_ll_devise, vp_ppb_ll_langues;
     
     
-    public Vp_profil_pays_bref(Context context) {
-        super(context);
+    public Vp_profil_pays_bref(Context context, AttributeSet attrs) {
+        super(context, attrs);
 
         ctx=context;
         setOrientation(VERTICAL);
@@ -48,14 +50,14 @@ public class Vp_profil_pays_bref extends LinearLayout{
         vp_ppb_tv_nom.setText(lePays.getNom());
         vp_ppb_tv_nom.setAllCaps(true);
         vp_ppb_tv_nom.setTextSize(40);
-        vp_ppb_tv_nom.setPadding(50,50,0,0);
+        vp_ppb_tv_nom.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
         vp_ppb_tv_nom.setTextColor(Color.rgb(217,135,0));
 
         vp_ppb_img = new ImageView(ctx);
         vp_ppb_img.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         vp_ppb_img.setImageResource(lePays.getRessImgPays());
         vp_ppb_img.setPadding(0,0,0,0);
-
+        vp_ppb_img.setAdjustViewBounds(true);
 
         vp_ppb_ll_horizontal1 = new LinearLayout(ctx);
         vp_ppb_ll_horizontal1.setOrientation(HORIZONTAL);

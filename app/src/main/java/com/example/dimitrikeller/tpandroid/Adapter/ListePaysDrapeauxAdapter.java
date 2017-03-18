@@ -1,4 +1,4 @@
-package com.example.dimitrikeller.tpandroid.VuePerso;
+package com.example.dimitrikeller.tpandroid.Adapter;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
@@ -24,7 +24,7 @@ import java.util.List;
 
 
 
-public class Vp_ajout_voyage_passe_drapeau extends ArrayAdapter {
+public class ListePaysDrapeauxAdapter extends ArrayAdapter {
 
     int idLayout;
     Context ctx;
@@ -33,7 +33,7 @@ public class Vp_ajout_voyage_passe_drapeau extends ArrayAdapter {
     TextView tv;
 
 
-    public Vp_ajout_voyage_passe_drapeau(Context context, int resource, List<Pays> objects) {
+    public ListePaysDrapeauxAdapter(Context context, int resource, List<Pays> objects) {
         super(context, 0, objects);
         idLayout=resource;
         ctx = context;

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/PrimShade1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/vp_listeVoyageFutur_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/pays_enconstruction1"
+            android:padding="0px"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:id="@+id/vp_listeVoyageFutur_tv_nomPays"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nom pays"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/vp_listeVoyageFutur_tv_dateDepart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date de départ"/>
+
+            <TextView
+                android:id="@+id/vp_listeVoyageFutur_tv_dateRetour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date de retour"
+                />
+
+            <TextView
+                android:id="@+id/vp_listeVoyageFutur_tv_complet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Complet"
+                />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/vp_listeVoyageFutur_btn_invitation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="consulter invitations"
+            android:layout_margin="5dp"
+            android:background="@color/colorAccent"/>
+
+        <Button
+            android:id="@+id/vp_listeVoyageFutur_btn_compagnon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="mes compagnons"
+            android:layout_margin="5dp"
+            android:background="@color/colorAccent"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -33,8 +33,7 @@ public class ProfilUtilisateur extends AppCompatActivity {
     ImageView pu_img_utilisateur;
     TextView pu_tv_nom, pu_tv_categorie, pu_tv_age, pu_tv_sexe, pu_tv_pays, pu_tv_listeLangue, pu_tv_listePreference;
     Button pu_btn_listeVoyageFutur, pu_btn_ajoutVoyageFutur, pu_btn_ajoutVoyagePasse;
-    Date dateAuj;
-    Date dateNaiss;
+    Date dateAuj, dateNaiss;
     int age;
 
     @Override

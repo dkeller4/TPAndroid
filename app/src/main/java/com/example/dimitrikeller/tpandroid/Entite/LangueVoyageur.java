@@ -8,6 +8,10 @@ public class LangueVoyageur {
 
     private int idVoyageur, idLangue;
 
+    public LangueVoyageur(){
+
+    }
+
     public LangueVoyageur(int idVoyageur, int idLangue) {
         this.idVoyageur = idVoyageur;
         this.idLangue = idLangue;

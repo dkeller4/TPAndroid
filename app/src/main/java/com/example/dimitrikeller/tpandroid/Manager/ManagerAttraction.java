@@ -17,7 +17,7 @@ public class ManagerAttraction {
 
     public static void init(){
         listeAttraction = new ArrayList<>();
-        listeAttraction.add(new Attraction(10, "Tour Eiffel", "Grande tour a visiter iconique", "Paris", 20, "Histoire", R.drawable.pays_france ));
+        listeAttraction.add(new Attraction(10, "Vieux-Québec", "Histoire,", "2 à 3 heures", "Québec", "555-555-5555", "http:www.google.ca", "oui", R.drawable.att_quebec));
 
     }
 

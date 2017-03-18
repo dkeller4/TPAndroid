@@ -9,18 +9,26 @@ public class Attraction {
     private int idAttraction;
     private String nom;
     private String description;
+    private String duree;
     private String ville;
-    private int idPreference;
-    private String preference;
+    private String telephone;
+    private String web;
+    private String gratuit;
     private int ressImgAttraction;
 
-    public Attraction(int idAttraction, String nom, String description, String ville, int idPreference, String preference, int ressImgAttraction) {
+    public Attraction(){
+
+    }
+
+    public Attraction(int idAttraction, String nom, String description, String duree, String ville, String telephone, String web, String gratuit, int ressImgAttraction) {
         this.idAttraction = idAttraction;
         this.nom = nom;
         this.description = description;
+        this.duree = duree;
         this.ville = ville;
-        this.idPreference = idPreference;
-        this.preference = preference;
+        this.telephone = telephone;
+        this.web = web;
+        this.gratuit = gratuit;
         this.ressImgAttraction = ressImgAttraction;
     }
 
@@ -48,6 +56,14 @@ public class Attraction {
         this.description = description;
     }
 
+    public String getDuree() {
+        return duree;
+    }
+
+    public void setDuree(String duree) {
+        this.duree = duree;
+    }
+
     public String getVille() {
         return ville;
     }
@@ -56,20 +72,28 @@ public class Attraction {
         this.ville = ville;
     }
 
-    public int getIdPreference() {
-        return idPreference;
+    public String getTelephone() {
+        return telephone;
     }
 
-    public void setIdPreference(int idPreference) {
-        this.idPreference = idPreference;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 
-    public String getPreference() {
-        return preference;
+    public String getWeb() {
+        return web;
     }
 
-    public void setPreference(String preference) {
-        this.preference = preference;
+    public void setWeb(String web) {
+        this.web = web;
+    }
+
+    public String getGratuit() {
+        return gratuit;
+    }
+
+    public void setGratuit(String gratuit) {
+        this.gratuit = gratuit;
     }
 
     public int getRessImgAttraction() {

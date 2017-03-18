@@ -14,7 +14,6 @@ public class Voyageur {
     private String penom;
     private String nom;
     private String dateNaissance;
-    private int idPaysNaissance;
     private String PaysNaissance;
     private String sexe;
     private ArrayList<VoyagePasse> listeVoyagePasse;
@@ -29,12 +28,11 @@ public class Voyageur {
 
     }
 
-    public Voyageur(int idVoyageur, String penom, String nom, String dateNaissance, int idPaysNaissance, String paysNaissance, String sexe, ArrayList<VoyagePasse> listeVoyagePasse, ArrayList<PreferenceVoyageur> listePreferenceVoyageur, ArrayList<LangueVoyageur> listeLangueVoyageur, ArrayList<VoyageFutur> listeVoyageFutur, int ressImgProfil, String categorieVoyageur) {
+    public Voyageur(int idVoyageur, String penom, String nom, String dateNaissance, String paysNaissance, String sexe, ArrayList<VoyagePasse> listeVoyagePasse, ArrayList<PreferenceVoyageur> listePreferenceVoyageur, ArrayList<LangueVoyageur> listeLangueVoyageur, ArrayList<VoyageFutur> listeVoyageFutur, int ressImgProfil, String categorieVoyageur) {
         this.idVoyageur = idVoyageur;
         this.penom = penom;
         this.nom = nom;
         this.dateNaissance = dateNaissance;
-        this.idPaysNaissance = idPaysNaissance;
         this.sexe = sexe;
         PaysNaissance = paysNaissance;
         this.listeVoyagePasse = listeVoyagePasse;
@@ -86,14 +84,6 @@ public class Voyageur {
 
     public void setDateNaissance(String dateNaissance) {
         this.dateNaissance = dateNaissance;
-    }
-
-    public int getIdPaysNaissance() {
-        return idPaysNaissance;
-    }
-
-    public void setIdPaysNaissance(int idPaysNaissance) {
-        this.idPaysNaissance = idPaysNaissance;
     }
 
     public String getPaysNaissance() {
