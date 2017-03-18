@@ -1,5 +1,6 @@
 package com.example.dimitrikeller.tpandroid.Manager;
 
+import com.example.dimitrikeller.tpandroid.Entite.LanguePays;
 import com.example.dimitrikeller.tpandroid.Entite.PreferencePays;
 
 import java.util.ArrayList;
@@ -28,6 +29,8 @@ public class ManagerPreferencePays {
     }
 
     public static PreferencePays getByIdPreference(int idCompare){
+        if(listePreferencePays == null)
+            init();
         PreferencePays retour = null;
         for (PreferencePays p :
                 listePreferencePays) {
@@ -39,11 +42,26 @@ public class ManagerPreferencePays {
 
 
     public static PreferencePays getByIdPays(int idCompare){
+        if(listePreferencePays == null)
+            init();
         PreferencePays retour = null;
         for (PreferencePays p :
                 listePreferencePays) {
             if(p.getIdPays() == idCompare)
                 retour = p;
+        }
+        return  retour;
+    }
+
+    public static ArrayList<PreferencePays> getAllByIdPays(int idCompare){
+        if(listePreferencePays == null)
+            init();
+        ArrayList<PreferencePays> retour = new ArrayList<>();
+
+        for (PreferencePays p :
+                listePreferencePays) {
+            if(p.getIdPays() == idCompare)
+                retour.add(p);
         }
         return  retour;
     }

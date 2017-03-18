@@ -16,13 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-
         </activity>
-        <activity android:name=".Activity.Ajout_voyage_passe">
+        <activity android:name=".Activity.Ajout_voyage_passe"></activity>
+        <activity android:name=".Activity.AjoutVoyageFutur"></activity>
+        <activity android:name=".Activity.ProfilUtilisateur">
 
-        </activity>
-        <activity
-            android:name=".Activity.AjoutVoyageFutur">
 
         </activity>
     </application>

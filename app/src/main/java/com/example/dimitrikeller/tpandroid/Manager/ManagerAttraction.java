@@ -28,6 +28,8 @@ public class ManagerAttraction {
     }
 
     public static Attraction getById(int idCompare){
+        if(listeAttraction == null)
+            init();
         Attraction retour = null;
         for (Attraction a :
                 listeAttraction) {

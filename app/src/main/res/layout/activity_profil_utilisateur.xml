@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dimitrikeller.tpandroid.Activity.ProfilUtilisateur"
+    android:background="@color/PrimShade1"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/pu_img_utilisateur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pr_smiley"
+            android:layout_weight="60"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="40"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/pu_tv_catégorie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Catégorie"
+                android:textAllCaps="true"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pu_tv_nom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nom" />
+
+            <TextView
+                android:id="@+id/pu_tv_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="age" />
+
+            <TextView
+                android:id="@+id/pu_tv_sexe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="sexe" />
+
+            <TextView
+                android:id="@+id/pu_tv_pays"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="pays" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Langues parlées" />
+
+            <TextView
+                android:id="@+id/pu_listeLangue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="liste des langues" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Préférences" />
+
+            <TextView
+                android:id="@+id/pu_listePreference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="liste des préférences" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/pu_btn_listeVoyageFutur"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Mes voyages à venir"
+            android:background="@color/colorAccent"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            />
+
+        <Button
+            android:id="@+id/pu_btn_ajoutVoyageFutur"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Ajouter un projet de voyage"
+            android:background="@color/colorAccent"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            />
+
+        <Button
+            android:id="@+id/pu_btn_ajoutVoyagePasse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Compléter la liste de vos voyages passés"
+            android:background="@color/colorAccent"
+            android:layout_weight="1"
+            android:layout_margin="5dp"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

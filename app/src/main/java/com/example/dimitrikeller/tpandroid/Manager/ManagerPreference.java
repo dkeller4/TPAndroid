@@ -30,6 +30,8 @@ public class ManagerPreference {
     }
 
     public static Preference getById(int idCompare){
+        if(listePreference == null)
+            init();
         Preference retour = null;
         for (Preference p :
                 listePreference) {

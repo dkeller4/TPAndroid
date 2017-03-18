@@ -27,6 +27,9 @@ public class ManagerLangue {
     }
 
     public static Langue getById(int idCompare){
+        if(listeLangue == null)
+            init();
+
         Langue retour = null;
         for (Langue l :
                 listeLangue) {

@@ -16,12 +16,45 @@ public class Voyageur {
     private String dateNaissance;
     private int idPaysNaissance;
     private String PaysNaissance;
+    private String sexe;
     private ArrayList<VoyagePasse> listeVoyagePasse;
     private ArrayList<PreferenceVoyageur> listePreferenceVoyageur;
     private ArrayList<LangueVoyageur> listeLangueVoyageur;
     private ArrayList<VoyageFutur> listeVoyageFutur;
     private int RessImgProfil;
     private String categorieVoyageur;
+
+
+    public Voyageur(){
+
+    }
+
+    public Voyageur(int idVoyageur, String penom, String nom, String dateNaissance, int idPaysNaissance, String paysNaissance, String sexe, ArrayList<VoyagePasse> listeVoyagePasse, ArrayList<PreferenceVoyageur> listePreferenceVoyageur, ArrayList<LangueVoyageur> listeLangueVoyageur, ArrayList<VoyageFutur> listeVoyageFutur, int ressImgProfil, String categorieVoyageur) {
+        this.idVoyageur = idVoyageur;
+        this.penom = penom;
+        this.nom = nom;
+        this.dateNaissance = dateNaissance;
+        this.idPaysNaissance = idPaysNaissance;
+        this.sexe = sexe;
+        PaysNaissance = paysNaissance;
+        this.listeVoyagePasse = listeVoyagePasse;
+        this.listePreferenceVoyageur = listePreferenceVoyageur;
+        this.listeLangueVoyageur = listeLangueVoyageur;
+        this.listeVoyageFutur = listeVoyageFutur;
+        RessImgProfil = ressImgProfil;
+        this.categorieVoyageur = categorieVoyageur;
+
+
+
+    }
+
+    public String getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
+    }
 
     public int getIdVoyageur() {
         return idVoyageur;
@@ -119,23 +152,7 @@ public class Voyageur {
         this.categorieVoyageur = categorieVoyageur;
     }
 
-    public Voyageur(int idVoyageur, String penom, String nom, String dateNaissance, int idPaysNaissance, String paysNaissance, ArrayList<VoyagePasse> listeVoyagePasse, ArrayList<PreferenceVoyageur> listePreferenceVoyageur, ArrayList<LangueVoyageur> listeLangueVoyageur, ArrayList<VoyageFutur> listeVoyageFutur, int ressImgProfil, String categorieVoyageur) {
-        this.idVoyageur = idVoyageur;
-        this.penom = penom;
-        this.nom = nom;
-        this.dateNaissance = dateNaissance;
-        this.idPaysNaissance = idPaysNaissance;
-        PaysNaissance = paysNaissance;
-        this.listeVoyagePasse = listeVoyagePasse;
-        this.listePreferenceVoyageur = listePreferenceVoyageur;
-        this.listeLangueVoyageur = listeLangueVoyageur;
-        this.listeVoyageFutur = listeVoyageFutur;
-        RessImgProfil = ressImgProfil;
-        this.categorieVoyageur = categorieVoyageur;
 
-
-
-    }
 
 
 }

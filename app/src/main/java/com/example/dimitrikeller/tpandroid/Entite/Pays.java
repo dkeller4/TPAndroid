@@ -12,6 +12,8 @@ public class Pays {
     private String nom;
     private int population;
     private String continent;
+    private String capitale;
+    private String devise;
     private int ressImgDrapeau;
     private int ressImgPays;
     private ArrayList<LanguePays> listeLanguePays;
@@ -19,12 +21,17 @@ public class Pays {
     private ArrayList<AttractionPays> listeAttractionPays;
 
 
+    public Pays(){
 
-    public Pays(int idPays, String nom, int population, String continent, int ressImgDrapeau, int ressImgPays, ArrayList<LanguePays> listeLanguePays, ArrayList<PreferencePays> listePreferencePays, ArrayList<AttractionPays> listeAttractionPays) {
+    }
+
+    public Pays(int idPays, String nom, int population, String continent, String capitale, String devise, int ressImgDrapeau, int ressImgPays, ArrayList<LanguePays> listeLanguePays, ArrayList<PreferencePays> listePreferencePays, ArrayList<AttractionPays> listeAttractionPays) {
         this.idPays = idPays;
         this.nom = nom;
         this.population = population;
         this.continent = continent;
+        this.capitale = capitale;
+        this.devise=devise;
         this.ressImgDrapeau = ressImgDrapeau;
         this.ressImgPays = ressImgPays;
         this.listeLanguePays = listeLanguePays;
@@ -32,8 +39,21 @@ public class Pays {
         this.listeAttractionPays = listeAttractionPays;
     }
 
+    public String getDevise() {
+        return devise;
+    }
 
+    public void setDevise(String devise) {
+        this.devise = devise;
+    }
 
+    public String getCapitale() {
+        return capitale;
+    }
+
+    public void setCapitale(String capitale) {
+        this.capitale = capitale;
+    }
 
     public int getIdPays() {
         return idPays;

@@ -30,6 +30,8 @@ public class ManagerAttractionPays {
     }
 
     public static AttractionPays getByIdAttraction(int idCompare){
+        if(listeAttraction == null)
+            init();
         AttractionPays retour = null;
         for (AttractionPays a :
                 listeAttraction) {
@@ -40,6 +42,8 @@ public class ManagerAttractionPays {
     }
 
     public static AttractionPays getByIdPays(int idCompare){
+        if(listeAttraction == null)
+            init();
         AttractionPays retour = null;
         for (AttractionPays a :
                 listeAttraction) {
@@ -49,5 +53,17 @@ public class ManagerAttractionPays {
         return  retour;
     }
 
+    public static ArrayList<AttractionPays> getAllByIdPays(int idCompare){
+        if(listeAttraction == null)
+            init();
+        ArrayList<AttractionPays> retour = new ArrayList<>();
+
+        for (AttractionPays a :
+                listeAttraction) {
+            if(a.getIdPays() == idCompare)
+                retour.add(a);
+        }
+        return  retour;
+    }
 
 }

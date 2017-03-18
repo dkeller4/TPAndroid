@@ -29,6 +29,8 @@ public class ManagerLanguePays {
     }
 
     public static LanguePays getByIdLangue(int idCompare){
+        if(listeLanguePays == null)
+            init();
         LanguePays retour = null;
         for (LanguePays l :
                 listeLanguePays) {
@@ -40,11 +42,26 @@ public class ManagerLanguePays {
 
 
     public static LanguePays getByIdPays(int idCompare){
+        if(listeLanguePays == null)
+            init();
         LanguePays retour = null;
         for (LanguePays l :
                 listeLanguePays) {
             if(l.getIdPays() == idCompare)
                 retour = l;
+        }
+        return  retour;
+    }
+
+    public static ArrayList<LanguePays> getAllByIdPays(int idCompare){
+        if(listeLanguePays == null)
+            init();
+        ArrayList<LanguePays> retour = new ArrayList<>();
+
+        for (LanguePays l :
+                listeLanguePays) {
+            if(l.getIdPays() == idCompare)
+                retour.add(l);
         }
         return  retour;
     }

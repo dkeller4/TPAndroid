@@ -30,6 +30,8 @@ public class ManagerPreferenceVoyageur {
     }
 
     public static PreferenceVoyageur getByIdPreference(int idCompare){
+        if(listePreferenceVoyageur == null)
+            init();
         PreferenceVoyageur retour = null;
         for (PreferenceVoyageur p :
                 listePreferenceVoyageur) {
@@ -40,11 +42,26 @@ public class ManagerPreferenceVoyageur {
     }
 
     public static PreferenceVoyageur getByIdVoyageur(int idCompare){
+        if(listePreferenceVoyageur == null)
+            init();
         PreferenceVoyageur retour = null;
         for (PreferenceVoyageur p :
                 listePreferenceVoyageur) {
             if(p.getIdVoyageur() == idCompare)
                 retour = p;
+        }
+        return  retour;
+    }
+
+    public static ArrayList<PreferenceVoyageur> getAllByIdVoyageur(int idCompare){
+        if(listePreferenceVoyageur == null)
+            init();
+        ArrayList<PreferenceVoyageur> retour = new ArrayList<>();
+
+        for (PreferenceVoyageur p :
+                listePreferenceVoyageur) {
+            if(p.getIdVoyageur() == idCompare)
+                retour.add(p);
         }
         return  retour;
     }

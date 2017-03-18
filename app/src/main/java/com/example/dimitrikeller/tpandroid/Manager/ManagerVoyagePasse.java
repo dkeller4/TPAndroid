@@ -27,6 +27,8 @@ public class ManagerVoyagePasse {
     }
 
     public static VoyagePasse getByIdVoyage(int idCompare){
+        if(listeVoyagePasse == null)
+            init();
         VoyagePasse retour = null;
         for (VoyagePasse v :
                 listeVoyagePasse) {
@@ -37,11 +39,26 @@ public class ManagerVoyagePasse {
     }
 
     public static VoyagePasse getByIdVoyageur(int idCompare){
+        if(listeVoyagePasse == null)
+            init();
         VoyagePasse retour = null;
         for (VoyagePasse v :
                 listeVoyagePasse) {
             if(v.getIdVoyageur() == idCompare)
                 retour = v;
+        }
+        return  retour;
+    }
+
+    public static ArrayList<VoyagePasse> getAllByIdVoyageur(int idCompare){
+        if(listeVoyagePasse == null)
+            init();
+        ArrayList<VoyagePasse> retour = new ArrayList<>();
+
+        for (VoyagePasse v :
+                listeVoyagePasse) {
+            if(v.getIdVoyageur() == idCompare)
+                retour.add(v);
         }
         return  retour;
     }

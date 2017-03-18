@@ -29,6 +29,9 @@ public class ManagerLangueVoyageur {
     }
 
     public static LangueVoyageur getByIdLangue(int idCompare){
+
+        if(listeLangueVoyageur == null)
+            init();
         LangueVoyageur retour = null;
         for (LangueVoyageur l :
                 listeLangueVoyageur) {
@@ -39,6 +42,9 @@ public class ManagerLangueVoyageur {
     }
 
     public static LangueVoyageur getByIdVoyageur(int idCompare){
+
+        if(listeLangueVoyageur == null)
+            init();
         LangueVoyageur retour = null;
         for (LangueVoyageur l :
                 listeLangueVoyageur) {
@@ -48,5 +54,17 @@ public class ManagerLangueVoyageur {
         return  retour;
     }
 
+    public static ArrayList<LangueVoyageur> getAllByIdVoyageur(int idCompare){
+        if(listeLangueVoyageur == null)
+            init();
+        ArrayList<LangueVoyageur> retour = new ArrayList<>();
+
+        for (LangueVoyageur l :
+                listeLangueVoyageur) {
+            if(l.getIdVoyageur() == idCompare)
+                retour.add(l);
+        }
+        return  retour;
+    }
 
 }
