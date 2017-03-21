@@ -12,6 +12,20 @@ import java.util.ArrayList;
 public class ManagerCompagnonVoyageFutur {
 
 
+    public static String COMPAGNON_VOYAGE_FUTUR_ID_VOYAGE = "idVoyage";
+    public static String COMPAGNON_VOYAGE_FUTUR_ID_VOYAGEUR ="idVoyageur";
+    public static String COMPAGNON_VOYAGE_FUTUR_TABLE = "attractionPays";
+
+    public static String ATTRACTION_PAYS_TABLE_CREATE = "create table " + COMPAGNON_VOYAGE_FUTUR_TABLE + "(" +
+            COMPAGNON_VOYAGE_FUTUR_ID_VOYAGE + " INTEGER " +
+            COMPAGNON_VOYAGE_FUTUR_ID_VOYAGEUR+ "INTEGER);";
+
+    public static String DROP_ATTRACTION_PAYS_TABLE = "drop table if exists + " + COMPAGNON_VOYAGE_FUTUR_TABLE;
+
+    public static String queryGetAll = "select * from " + COMPAGNON_VOYAGE_FUTUR_TABLE;
+
+
+
     private static ArrayList<CompagnonVoyageFutur> listeCompagnon;
 
     public static void init(){

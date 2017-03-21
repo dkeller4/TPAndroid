@@ -12,6 +12,28 @@ import java.util.ArrayList;
 public class ManagerInvitationVoyageFutur {
 
 
+    public static String INVITATION_ID = "idInvitation";
+    public static String INVITATION_ID_VOYAGE = "idVoyage";
+    public static String INVITATION_ID_VOYAGEUR_ENVOYEUR = "idVoyageurEnvoyeur";
+    public static String INVITATION_ID_VOYAGEUR_RECEVEUR = "idVoyageurReceveur";
+    public static String INVITATION_ATTENTE = "estEnAttente";
+    public static String INVITATION_ACCEPTE = "estAccepte";
+    public static String INVITATION_TABLE = "invitation";
+
+    public static String INVITATION_TABLE_CREATE = "create table "+ INVITATION_TABLE + "(" +
+            INVITATION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            INVITATION_ID_VOYAGE + " INTEGER, " +
+            INVITATION_ID_VOYAGEUR_ENVOYEUR + " INTEGER, " +
+            INVITATION_ID_VOYAGEUR_RECEVEUR + " INTEGER, " +
+            INVITATION_ATTENTE + " INTEGER, " +
+            INVITATION_ACCEPTE + " INTEGER);";
+
+
+    public static String DROP_INVITATION_TABLE = "drop table if exists "+ INVITATION_TABLE ;
+
+    private static String queryGetAll = "select * from "+ INVITATION_TABLE;
+
+
     private static ArrayList<InvitationVoyageFutur> listeInvitationVoyageFutur;
 
     public static void init(){

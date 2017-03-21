@@ -11,6 +11,20 @@ import java.util.ArrayList;
 
 public class ManagerLanguePays {
 
+    public static String LANGUE_PAYS_ID_LANGUE = "idLangue";
+    public static String LANGUE_PAYS_ID_PAYS = "idPays";
+    public static String LANGUE_PAYS_TABLE = "languePays";
+
+    public static String LANGUE_PAYS_TABLE_CREATE = "create table " + LANGUE_PAYS_TABLE + "(" +
+            LANGUE_PAYS_ID_LANGUE + " INTEGER, " +
+            LANGUE_PAYS_ID_PAYS + " INTEGER);";
+
+
+    public static String DROP_LANGUE_PAYS_TABLE = "drop table if exists "+ LANGUE_PAYS_TABLE ;
+
+    private static String queryGetAll = "select * from "+ LANGUE_PAYS_TABLE;
+
+
     private static ArrayList<LanguePays> listeLanguePays;
 
     public static void init(){

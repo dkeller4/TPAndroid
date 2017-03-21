@@ -11,6 +11,19 @@ import java.util.ArrayList;
 
 public class ManagerPreference {
 
+    public static String PREFERENCE_ID = "id";
+    public static String PREFERENCE_TYPE = "typePreference";
+    public static String PREFERENCE_TABLE;
+
+    public static String PREFERENCE_TABLE_CREATE = "create table " + PREFERENCE_TABLE + "(" +
+            PREFERENCE_ID + " INTEGER PRIMARY KEY, " +
+            PREFERENCE_TYPE + " TEXT);";
+
+
+    public static String DROP_PREFERENCE_TABLE = "drop table if exists "+ PREFERENCE_TABLE ;
+
+    private static String queryGetAll = "select * from "+ PREFERENCE_TABLE;
+    
 
     private static ArrayList<Preference> listePreference;
 

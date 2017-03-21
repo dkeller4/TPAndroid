@@ -11,6 +11,22 @@ import java.util.ArrayList;
 
 public class ManagerLangueVoyageur {
 
+    public static String LANGUE_VOYAGEUR_ID_LANGUE = "idLangue";
+    public static String LANGUE_VOYAGEUR_ID_VOYAGEUR = "idvoyageur";
+    public static String LANGUE_VOYAGEUR_TABLE = "languePays";
+
+    public static String LANGUE_VOYAGEUR_TABLE_CREATE = "create table " + LANGUE_VOYAGEUR_TABLE + "(" +
+            LANGUE_VOYAGEUR_ID_LANGUE + " INTEGER, " +
+            LANGUE_VOYAGEUR_ID_VOYAGEUR + " INTEGER);";
+
+
+    public static String DROP_LANGUE_PAYS_TABLE = "drop table if exists "+ LANGUE_VOYAGEUR_TABLE ;
+
+    private static String queryGetAll = "select * from "+ LANGUE_VOYAGEUR_TABLE;
+
+
+
+
     private static ArrayList<LangueVoyageur> listeLangueVoyageur;
 
     public static void init(){

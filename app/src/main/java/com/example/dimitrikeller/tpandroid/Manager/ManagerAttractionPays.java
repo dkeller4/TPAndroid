@@ -12,6 +12,19 @@ import java.util.ArrayList;
 
 public class ManagerAttractionPays {
 
+
+    public static String ATTRACTION_PAYS_ID_PAYS = "idPays";
+    public static String ATTRACTION_PAYS_ID_ATTRACTION ="idAttraction";
+    public static String ATTRACTION_PAYS_TABLE = "attractionPays";
+
+    public static String ATTRACTION_PAYS_TABLE_CREATE = "create table " + ATTRACTION_PAYS_TABLE + "(" +
+            ATTRACTION_PAYS_ID_PAYS + " INTEGER " +
+            ATTRACTION_PAYS_ID_ATTRACTION+ "INTEGER);";
+
+    public static String DROP_ATTRACTION_PAYS_TABLE = "drop table if exists + " + ATTRACTION_PAYS_TABLE;
+
+    public static String queryGetAll = "select * from " + ATTRACTION_PAYS_TABLE;
+
     private static ArrayList<AttractionPays> listeAttraction;
 
     public static void init(){

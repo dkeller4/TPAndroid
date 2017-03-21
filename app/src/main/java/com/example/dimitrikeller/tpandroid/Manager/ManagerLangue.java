@@ -9,6 +9,20 @@ import java.util.ArrayList;
 
 public class ManagerLangue {
 
+    public static String LANGUE_ID = "id";
+    public static String LANGUE_NOM = "nomLangue";
+    public static String LANGUE_TABLE;
+
+    public static String LANGUE_TABLE_CREATE = "create table " + LANGUE_TABLE + "(" +
+            LANGUE_ID + " INTEGER PRIMARY KEY, " +
+            LANGUE_NOM + " TEXT);";
+
+
+    public static String DROP_LANGUE_TABLE = "drop table if exists "+ LANGUE_TABLE ;
+
+    private static String queryGetAll = "select * from "+ LANGUE_TABLE;
+
+
     private static ArrayList<Langue> listeLangue;
 
     public static void init(){

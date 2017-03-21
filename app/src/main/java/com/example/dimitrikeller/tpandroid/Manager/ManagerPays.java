@@ -11,7 +11,30 @@ import java.util.ArrayList;
 
 public class ManagerPays {
 
+    public static String PAYS_ID = "idPays";
+    public static String PAYS_NOM = "nom";
+    public static String PAYS_POPULATION = "population";
+    public static String PAYS_CONTINENT = "continent";
+    public static String PAYS_CAPITALE = "capitale";
+    public static String PAYS_DEVISE = "devise";
+    public static String PAYS_IMG_DRAPEAU = "imgDrapeau";
+    public static String PAYS_IMG_PAYS ="imgPays";
+    public static String PAYS_TABLE = "pays";
 
+    public static String PAYS_TABLE_CREATE = "create table " + PAYS_TABLE + "(" +
+            PAYS_ID + " INTEGER PRIMARY KEY, " +
+            PAYS_NOM + " TEXT, " +
+            PAYS_POPULATION + " INTEGER, " +
+            PAYS_CONTINENT + " TEXT, "+
+            PAYS_CAPITALE +  " TEXT, "+
+            PAYS_DEVISE + " TEXT, "+
+            PAYS_IMG_DRAPEAU + " TEXT, "+
+            PAYS_IMG_PAYS + " TEXT);";
+
+
+    public static String DROP_PAYS_TABLE = "drop table if exists "+ PAYS_TABLE ;
+
+    private static String queryGetAll = "select * from "+ PAYS_TABLE;
 
     private static ArrayList<Pays> listePays;
 

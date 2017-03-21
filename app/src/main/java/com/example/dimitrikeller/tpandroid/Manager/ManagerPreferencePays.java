@@ -11,6 +11,22 @@ import java.util.ArrayList;
 
 public class ManagerPreferencePays {
 
+    public static String PREFERENCE_PAYS_ID_PREFERENCE = "idPreference";
+    public static String PREFERENCE_PAYS_ID_PAYS = "idPays";
+    public static String PREFERENCE_PAYS_TABLE = "preferencePays";
+
+    public static String PREFERENCE_PAYS_TABLE_CREATE = "create table " + PREFERENCE_PAYS_TABLE + "(" +
+            PREFERENCE_PAYS_ID_PREFERENCE + " INTEGER, " +
+            PREFERENCE_PAYS_ID_PAYS + " INTEGER);";
+
+
+    public static String DROP_PREFERENCE_PAYS_TABLE = "drop table if exists "+ PREFERENCE_PAYS_TABLE ;
+
+    private static String queryGetAll = "select * from "+ PREFERENCE_PAYS_TABLE;
+
+
+
+
     private static ArrayList<PreferencePays> listePreferencePays;
 
     public static void init(){

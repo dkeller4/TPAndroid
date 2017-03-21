@@ -10,6 +10,22 @@ import java.util.ArrayList;
 
 public class ManagerVoyagePasse {
 
+    public static String VOYAGE_PASSE_ID = "id";
+    public static String VOYAGE_PASSE_ID_VOYAGEUR = "idVoyageur";
+    public static String VOYAGE_PASSE_ID_PAYS = "idPays";
+    public static String VOYAGE_PASSE_TABLE;
+
+    public static String VOYAGE_PASSE_TABLE_CREATE = "create table " + VOYAGE_PASSE_TABLE + "(" +
+            VOYAGE_PASSE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            VOYAGE_PASSE_ID_VOYAGEUR + " INTEGER, " +
+            VOYAGE_PASSE_ID_PAYS + " INTEGER);";
+
+
+    public static String DROP_VOYAGE_PASSE_TABLE = "drop table if exists "+ VOYAGE_PASSE_TABLE ;
+
+    private static String queryGetAll = "select * from "+ VOYAGE_PASSE_TABLE;
+
+
     private static ArrayList<VoyagePasse> listeVoyagePasse;
 
     public static void init(){

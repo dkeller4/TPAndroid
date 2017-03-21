@@ -10,6 +10,31 @@ import java.util.ArrayList;
 
 public class ManagerVoyageFutur {
 
+
+    public static String VOYAGE_FUTUR_ID = "id";
+    public static String VOYAGE_FUTUR_ID_PAYS = "idPays";
+    public static String VOYAGE_FUTUR_ID_VOYAGEUR = "idVoyageur";
+    public static String VOYAGE_FUTUR_DATE_DEPART = "dateDepart";
+    public static String VOYAGE_FUTUR_DATE_RETOUR = "dateRetour";
+    public static String VOYAGE_FUTUR_FLEXIBLE = "estFlexible";
+    public static String VOYAGE_FUTUR_COMPLET = "estComplet";
+    public static String VOYAGE_FUTUR_TABLE;
+
+    public static String VOYAGE_FUTUR_CREATE = "create table " + VOYAGE_FUTUR_TABLE + "("+
+            VOYAGE_FUTUR_ID + " INTEGER PRIMARY KEY AUTOINCREMENT " +
+            VOYAGE_FUTUR_ID_PAYS + " INTEGER, " +
+            VOYAGE_FUTUR_ID_VOYAGEUR + " INTEGER, " +
+            VOYAGE_FUTUR_DATE_DEPART + " TEXT, " +
+            VOYAGE_FUTUR_DATE_RETOUR + " TEXT, " +
+            VOYAGE_FUTUR_FLEXIBLE + " INTEGER, "+
+            VOYAGE_FUTUR_COMPLET + " INTEGER);";
+
+
+    public static String DROP_VOYAGE_FUTUR_TABLE = "drop table if exists "+ VOYAGE_FUTUR_TABLE ;
+
+    private static String queryGetAll = "select * from "+ VOYAGE_FUTUR_TABLE;
+
+
     private static ArrayList<VoyageFutur> listeVoyageFutur;
 
     public static void init(){
