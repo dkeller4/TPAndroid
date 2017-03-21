@@ -1,7 +1,13 @@
 package com.example.dimitrikeller.tpandroid.Manager;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
+import com.example.dimitrikeller.tpandroid.Entite.CompagnonVoyageFutur;
 import com.example.dimitrikeller.tpandroid.Entite.InvitationVoyageFutur;
 import com.example.dimitrikeller.tpandroid.Entite.Pays;
+import com.example.dimitrikeller.tpandroid.Service.ConnexionBD;
 
 import java.util.ArrayList;
 
@@ -115,6 +121,54 @@ public class ManagerInvitationVoyageFutur {
         }
         return  retour;
     }
+
+    /* Méthode de modification de la base de données*/
+
+    //Ajout
+    public static long add(InvitationVoyageFutur entiteToAdd, Context ctx){
+        long retour = -1;
+        ContentValues cv = new ContentValues();
+        cv.put(INVITATION_ID, entiteToAdd.getIdInvitation());
+        cv.put(INVITATION_ID_VOYAGE, entiteToAdd.getIdVoyageFutur());
+        cv.put(INVITATION_ID_VOYAGEUR_ENVOYEUR, entiteToAdd.getIdVoyageurEnvoyeur());
+        cv.put(INVITATION_ID_VOYAGEUR_RECEVEUR, entiteToAdd.getIdVoyageurReceveur());
+        cv.put(INVITATION_ATTENTE, entiteToAdd.isEstEnAttente());
+        cv.put(INVITATION_ACCEPTE, entiteToAdd.isEstAccepte());
+
+
+        SQLiteDatabase bd = ConnexionBD.getBD(ctx);
+        retour = bd.insert(INVITATION_TABLE,null,cv);
+
+        ConnexionBD.close();
+
+        return retour;
+    }
+
+    //Supression
+
+    public static void delete(int id1, Context ctx){
+        SQLiteDatabase bd = ConnexionBD.getBD(ctx);
+        bd.delete(INVITATION_TABLE, INVITATION_ID + " = ? AND ", new String[]{String.valueOf(id1)});
+
+    }
+
+    // Modification
+
+    public static void update(InvitationVoyageFutur entite, Context ctx){
+        ContentValues cv = new ContentValues();
+        cv.put(INVITATION_ID,entite.getIdInvitation());
+        cv.put(INVITATION_ID_VOYAGE, entite.getIdVoyageFutur());
+        cv.put(INVITATION_ID_VOYAGEUR_ENVOYEUR, entite.getIdVoyageurEnvoyeur());
+        cv.put(INVITATION_ID_VOYAGEUR_RECEVEUR, entite.getIdVoyageurReceveur());
+        cv.put(INVITATION_ATTENTE, entite.isEstEnAttente());
+        cv.put(INVITATION_ACCEPTE, entite.isEstAccepte());
+
+        SQLiteDatabase bd = ConnexionBD.getBD(ctx);
+        bd.update(INVITATION_TABLE, cv, INVITATION_ID + " = ? AND " , new String[]{String.valueOf(entite.getIdInvitation())});
+
+    }
+
+
 
 
 }

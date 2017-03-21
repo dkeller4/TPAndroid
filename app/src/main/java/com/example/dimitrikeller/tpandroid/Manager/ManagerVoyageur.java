@@ -1,8 +1,13 @@
 package com.example.dimitrikeller.tpandroid.Manager;
 
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
 import com.example.dimitrikeller.tpandroid.Entite.Voyageur;
 import com.example.dimitrikeller.tpandroid.R;
+import com.example.dimitrikeller.tpandroid.Service.ConnexionBD;
 
 import java.util.ArrayList;
 
@@ -68,7 +73,53 @@ public class ManagerVoyageur {
     }
 
 
+/* Méthode de modification de la base de données*/
 
+    //Ajout
+    public static long add(Voyageur entiteToAdd, Context ctx){
+        long retour = -1;
+        ContentValues cv = new ContentValues();
+        cv.put(VOYAGEUR_NOM,entiteToAdd.getNom());
+        cv.put(VOYAGEUR_PRENOM,entiteToAdd.getPenom());
+        cv.put(VOYAGEUR_DATE_NAISSANCE,entiteToAdd.getDateNaissance());
+        cv.put(VOYAGEUR_PAYS_NAISSANCE, entiteToAdd.getDateNaissance());
+        cv.put(VOYAGEUR_SEXE, entiteToAdd.getPaysNaissance());
+        cv.put(VOYAGEUR_IMG_PROFIL, entiteToAdd.getRessImgProfil());
+        cv.put(VOYAGEUR_CATEGORIE, entiteToAdd.getCategorieVoyageur());
+
+
+        SQLiteDatabase bd = ConnexionBD.getBD(ctx);
+        retour = bd.insert(VOYAGEUR_TABLE,null,cv);
+
+        ConnexionBD.close();
+
+        return retour;
+    }
+
+    //Supression
+
+    public static void delete(int id, Context ctx){
+        SQLiteDatabase bd = ConnexionBD.getBD(ctx);
+        bd.delete(VOYAGEUR_TABLE, VOYAGEUR_ID + " = ?", new String[]{String.valueOf(id)});
+
+    }
+
+    // Modification
+
+    public static void update(Voyageur entite, Context ctx){
+        ContentValues cv = new ContentValues();
+        cv.put(VOYAGEUR_NOM,entite.getNom());
+        cv.put(VOYAGEUR_PRENOM, entite.getPenom());
+        cv.put(VOYAGEUR_DATE_NAISSANCE, entite.getDateNaissance());
+        cv.put(VOYAGEUR_PAYS_NAISSANCE, entite.getPaysNaissance());
+        cv.put(VOYAGEUR_SEXE, entite.getSexe());
+        cv.put(VOYAGEUR_IMG_PROFIL, entite.getRessImgProfil());
+        cv.put(VOYAGEUR_CATEGORIE, entite.getCategorieVoyageur());
+
+        SQLiteDatabase bd = ConnexionBD.getBD(ctx);
+        bd.update(VOYAGEUR_TABLE, cv, VOYAGEUR_ID + " = ?", new String[]{String.valueOf(entite.getIdVoyageur())});
+
+    }
 
 
 }

@@ -14,14 +14,18 @@
         </activity>
         <activity android:name=".Activity.Ajout_voyage_passe" />
         <activity android:name=".Activity.AjoutVoyageFutur" />
-        <activity android:name=".Activity.ProfilUtilisateur"></activity>
-        <activity android:name=".Activity.MesVoyagesFuturs">
+        <activity android:name=".Activity.ProfilUtilisateur">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".Activity.MesVoyagesFuturs">
+
+
 
         </activity>
     </application>

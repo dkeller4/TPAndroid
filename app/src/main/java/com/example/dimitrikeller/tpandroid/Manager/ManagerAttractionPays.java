@@ -1,7 +1,13 @@
 package com.example.dimitrikeller.tpandroid.Manager;
 
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
+import com.example.dimitrikeller.tpandroid.Entite.Attraction;
 import com.example.dimitrikeller.tpandroid.Entite.AttractionPays;
+import com.example.dimitrikeller.tpandroid.Service.ConnexionBD;
 
 
 import java.util.ArrayList;
@@ -78,5 +84,45 @@ public class ManagerAttractionPays {
         }
         return  retour;
     }
+
+
+    /* Méthode de modification de la base de données*/
+
+    //Ajout
+    public static long add(AttractionPays entiteToAdd, Context ctx){
+        long retour = -1;
+        ContentValues cv = new ContentValues();
+        cv.put(ATTRACTION_PAYS_ID_PAYS,entiteToAdd.getIdPays());
+        cv.put(ATTRACTION_PAYS_ID_ATTRACTION,entiteToAdd.getIdAttraction());
+
+
+        SQLiteDatabase bd = ConnexionBD.getBD(ctx);
+        retour = bd.insert(ATTRACTION_PAYS_TABLE,null,cv);
+
+        ConnexionBD.close();
+
+        return retour;
+    }
+
+    //Supression
+
+    public static void delete(int id, Context ctx){
+        SQLiteDatabase bd = ConnexionBD.getBD(ctx);
+        bd.delete(ATTRACTION_PAYS_TABLE, ATTRACTION_PAYS_ID_ATTRACTION + " = ?", new String[]{String.valueOf(id)});
+
+    }
+
+    // Modification
+
+    public static void update(AttractionPays entite, Context ctx){
+        ContentValues cv = new ContentValues();
+        cv.put(ATTRACTION_PAYS_ID_PAYS,entite.getIdAttraction());
+        cv.put(ATTRACTION_PAYS_ID_PAYS,entite.getIdPays());
+
+        SQLiteDatabase bd = ConnexionBD.getBD(ctx);
+        bd.update(ATTRACTION_PAYS_TABLE, cv, ATTRACTION_PAYS_ID_ATTRACTION + " = ?", new String[]{String.valueOf(entite.getIdAttraction())});
+
+    }
+
 
 }

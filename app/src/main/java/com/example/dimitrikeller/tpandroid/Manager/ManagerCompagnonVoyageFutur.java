@@ -1,7 +1,13 @@
 package com.example.dimitrikeller.tpandroid.Manager;
 
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
+import com.example.dimitrikeller.tpandroid.Entite.AttractionPays;
 import com.example.dimitrikeller.tpandroid.Entite.CompagnonVoyageFutur;
+import com.example.dimitrikeller.tpandroid.Service.ConnexionBD;
 
 import java.util.ArrayList;
 
@@ -79,5 +85,47 @@ public class ManagerCompagnonVoyageFutur {
         }
         return  retour;
     }
+
+
+    /* Méthode de modification de la base de données*/
+
+    //Ajout
+    public static long add(CompagnonVoyageFutur entiteToAdd, Context ctx){
+        long retour = -1;
+        ContentValues cv = new ContentValues();
+        cv.put(COMPAGNON_VOYAGE_FUTUR_ID_VOYAGE,entiteToAdd.getIdVoyageFutur());
+        cv.put(COMPAGNON_VOYAGE_FUTUR_ID_VOYAGEUR,entiteToAdd.getIdVoyageurCompagnon());
+
+
+        SQLiteDatabase bd = ConnexionBD.getBD(ctx);
+        retour = bd.insert(COMPAGNON_VOYAGE_FUTUR_TABLE,null,cv);
+
+        ConnexionBD.close();
+
+        return retour;
+    }
+
+    //Supression
+
+    public static void delete(int id1,int id2, Context ctx){
+        SQLiteDatabase bd = ConnexionBD.getBD(ctx);
+        bd.delete(COMPAGNON_VOYAGE_FUTUR_TABLE, COMPAGNON_VOYAGE_FUTUR_ID_VOYAGE + " = ? AND " + COMPAGNON_VOYAGE_FUTUR_ID_VOYAGEUR + " = ?", new String[]{String.valueOf(id1), String.valueOf(id2)});
+
+    }
+
+    // Modification
+
+    public static void update(CompagnonVoyageFutur entite, Context ctx){
+        ContentValues cv = new ContentValues();
+        cv.put(COMPAGNON_VOYAGE_FUTUR_ID_VOYAGE,entite.getIdVoyageFutur());
+        cv.put(COMPAGNON_VOYAGE_FUTUR_ID_VOYAGEUR,entite.getIdVoyageurCompagnon());
+
+        SQLiteDatabase bd = ConnexionBD.getBD(ctx);
+        bd.update(COMPAGNON_VOYAGE_FUTUR_TABLE, cv, COMPAGNON_VOYAGE_FUTUR_ID_VOYAGE + " = ? AND " + COMPAGNON_VOYAGE_FUTUR_ID_VOYAGEUR + " = ?", new String[]{String.valueOf(entite.getIdVoyageFutur()), String.valueOf(entite.getIdVoyageurCompagnon())});
+
+    }
+
+
+
 
 }
