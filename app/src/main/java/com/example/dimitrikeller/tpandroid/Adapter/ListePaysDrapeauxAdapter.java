@@ -53,10 +53,7 @@ public class ListePaysDrapeauxAdapter extends ArrayAdapter {
 
 
         String name = lePays.getRessImgDrapeau();
-        Log.d("debug", ""+ name);
-
-
-            imgIdressource = ctx.getResources().getIdentifier(name, "drawable", "com.example.dimitrikeller.tpandroid");
+        imgIdressource = ctx.getResources().getIdentifier(name, "drawable", "com.example.dimitrikeller.tpandroid");
 
 
 

@@ -45,8 +45,11 @@ public class ProfilUtilisateur extends AppCompatActivity {
         leVoyageur = new Voyageur();
         leVoyageur = ManagerVoyageur.getById(this, idVoyageur);
 
+        String name = leVoyageur.getRessImgProfil();
+        int imgIdressource = getResources().getIdentifier(name, "drawable", "com.example.dimitrikeller.tpandroid");
+
         pu_img_utilisateur = (ImageView) findViewById(R.id.pu_img_utilisateur);
-        pu_img_utilisateur.setImageResource(Integer.parseInt(leVoyageur.getRessImgProfil()));
+        pu_img_utilisateur.setImageResource(imgIdressource);
 
         pu_tv_categorie = (TextView) findViewById(R.id.pu_tv_catégorie);
         pu_tv_categorie.setText(leVoyageur.getCategorieVoyageur());

@@ -31,7 +31,7 @@ public class ManagerVoyageur {
     public static String VOYAGEUR_TABLE = "voyageur";
 
     public static String VOYAGEUR_TABLE_CREATE = "Create table " + VOYAGEUR_TABLE + "("+
-            VOYAGEUR_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
+            VOYAGEUR_ID + " INTEGER PRIMARY KEY , "+
             VOYAGEUR_NOM + " TEXT, "+
             VOYAGEUR_PRENOM + " TEXT, "+
             VOYAGEUR_DATE_NAISSANCE + " TEXT, " +

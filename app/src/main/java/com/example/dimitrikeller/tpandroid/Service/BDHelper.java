@@ -15,6 +15,7 @@ import com.example.dimitrikeller.tpandroid.Manager.ManagerPays;
 import com.example.dimitrikeller.tpandroid.Manager.ManagerPreference;
 import com.example.dimitrikeller.tpandroid.Manager.ManagerPreferencePays;
 import com.example.dimitrikeller.tpandroid.Manager.ManagerPreferenceVoyageur;
+import com.example.dimitrikeller.tpandroid.Manager.ManagerUtilisateur;
 import com.example.dimitrikeller.tpandroid.Manager.ManagerVoyageFutur;
 import com.example.dimitrikeller.tpandroid.Manager.ManagerVoyagePasse;
 import com.example.dimitrikeller.tpandroid.Manager.ManagerVoyageur;
@@ -53,7 +54,7 @@ public class BDHelper extends SQLiteOpenHelper {
         db.execSQL(ManagerVoyageFutur.VOYAGE_FUTUR_CREATE);
         db.execSQL(ManagerVoyagePasse.VOYAGE_PASSE_TABLE_CREATE);
         db.execSQL(ManagerVoyageur.VOYAGEUR_TABLE_CREATE);
-
+        db.execSQL(ManagerUtilisateur.VOYAGEUR_TABLE_CREATE);
     }
 
     @Override
@@ -72,6 +73,7 @@ public class BDHelper extends SQLiteOpenHelper {
         db.execSQL(ManagerVoyageFutur.DROP_VOYAGE_FUTUR_TABLE);
         db.execSQL(ManagerVoyagePasse.DROP_VOYAGE_PASSE_TABLE);
         db.execSQL(ManagerVoyageur.DROP_VOYAGEUR_TABLE);
+        db.execSQL(ManagerUtilisateur.DROP_UTILISATEUR_TABLE);
         onCreate(db);
     }
 }

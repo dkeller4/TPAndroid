@@ -19,7 +19,7 @@ import com.example.dimitrikeller.tpandroid.Adapter.ListePaysDrapeauxAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ajout_voyage_passe extends AppCompatActivity {
+public class AjoutVoyagePasse extends AppCompatActivity {
 
     Spinner spinner;
     GridView gv;

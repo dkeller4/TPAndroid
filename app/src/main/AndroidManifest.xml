@@ -9,28 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.MainActivity">
-
-        </activity>
-        <activity android:name=".Activity.Ajout_voyage_passe" >
+        <activity android:name=".Activity.OuvertureApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity android:name=".Activity.AjoutVoyagePasse" />
         <activity android:name=".Activity.AjoutVoyageFutur" />
-        <activity android:name=".Activity.ProfilUtilisateur">
-
-
-
-        </activity>
-        <activity android:name=".Activity.MesVoyagesFuturs">
-
-
-
-        </activity>
+        <activity android:name=".Activity.ProfilUtilisateur" />
+        <activity android:name=".Activity.MesVoyagesFuturs" />
+        <activity android:name=".Activity.EnregistrementNouvelUtilisateur" />
+        <activity android:name=".Activity.OuvertureNouvelleSession" />
+        <activity android:name=".Activity.BrowseListePays" />
+        <activity android:name=".Activity.BrowseListeVoyageur" />
+        <activity android:name=".Activity.BrowseListeInvitation" />
+        <activity android:name=".Activity.BrowseListeMesCompagnons" />
+        <activity android:name=".Activity.AjoutCompgnonListeVoyageur" />
+        <activity android:name=".Activity.AjoutCompagnonParInvitation" />
+        <activity android:name=".Activity.ProfilPays" />
+        <activity android:name=".Activity.ProfilAutreVoyageur" />
+        <activity android:name=".Activity.ProfilAttraction" />
+        <activity android:name=".Activity.EnregistrementDonnePerso"></activity>
     </application>
 
 </manifest>
