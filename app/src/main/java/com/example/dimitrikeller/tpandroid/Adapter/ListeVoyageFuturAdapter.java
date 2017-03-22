@@ -52,10 +52,10 @@ public class ListeVoyageFuturAdapter extends ArrayAdapter<VoyageFutur> {
         }
 
         vp_lvf_img = (ImageButton) convertView.findViewById(R.id.vp_listeVoyageFutur_img);
-        vp_lvf_img.setImageResource(ManagerPays.getById(vf.getIdPays()).getRessImgPays());
+        vp_lvf_img.setImageResource(Integer.parseInt(ManagerPays.getById(ctx, vf.getIdPays()).getRessImgPays()));
 
         vp_lvf_tv_nom = (TextView) convertView.findViewById(R.id.vp_listeVoyageFutur_tv_nomPays);
-        vp_lvf_tv_nom.setText(ManagerPays.getById(vf.getIdPays()).getNom());
+        vp_lvf_tv_nom.setText(Integer.parseInt(ManagerPays.getById(ctx, vf.getIdPays()).getNom()));
 
         dateDepart = dateRetour = null;
         SimpleDateFormat dates = new SimpleDateFormat("dd/MM/yyyy");

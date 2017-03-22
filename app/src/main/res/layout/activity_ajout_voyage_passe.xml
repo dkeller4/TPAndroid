@@ -68,7 +68,7 @@
         android:fastScrollEnabled="false"
         android:isScrollContainer="false"
         android:keepScreenOn="false"
-        android:numColumns="4"
+        android:numColumns="2"
         android:nestedScrollingEnabled="true"
         />
 

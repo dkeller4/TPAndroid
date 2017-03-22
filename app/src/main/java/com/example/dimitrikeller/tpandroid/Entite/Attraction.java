@@ -14,13 +14,13 @@ public class Attraction {
     private String telephone;
     private String web;
     private String gratuit;
-    private int ressImgAttraction;
+    private String ressImgAttraction;
 
     public Attraction(){
 
     }
 
-    public Attraction(int idAttraction, String nom, String description, String duree, String ville, String telephone, String web, String gratuit, int ressImgAttraction) {
+    public Attraction(int idAttraction, String nom, String description, String duree, String ville, String telephone, String web, String gratuit, String ressImgAttraction) {
         this.idAttraction = idAttraction;
         this.nom = nom;
         this.description = description;
@@ -96,11 +96,11 @@ public class Attraction {
         this.gratuit = gratuit;
     }
 
-    public int getRessImgAttraction() {
+    public String getRessImgAttraction() {
         return ressImgAttraction;
     }
 
-    public void setRessImgAttraction(int ressImgAttraction) {
+    public void setRessImgAttraction(String ressImgAttraction) {
         this.ressImgAttraction = ressImgAttraction;
     }
 }

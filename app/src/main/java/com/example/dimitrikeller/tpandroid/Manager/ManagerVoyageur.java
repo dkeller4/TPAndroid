@@ -3,6 +3,7 @@ package com.example.dimitrikeller.tpandroid.Manager;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.dimitrikeller.tpandroid.Entite.Voyageur;
@@ -43,26 +44,40 @@ public class ManagerVoyageur {
 
     public static String queryGetAll = "select * from " + VOYAGEUR_TABLE;
 
-    private static ArrayList<Voyageur> listeVoyageur;
-    public static void init(){
-        listeVoyageur = new ArrayList<>();
-        listeVoyageur.add(new Voyageur(10, "Boule", "Bill", "29/10/1987",  "Canada", "f", ManagerVoyagePasse.getAll(), ManagerPreferenceVoyageur.getAll(), ManagerLangueVoyageur.getAll(), ManagerVoyageFutur.getAll(), R.drawable.pr_pika, "Expert"));
-        listeVoyageur.add(new Voyageur(20, "Astérix", "Et Obélix", "29/10/1987",  "France", "h", ManagerVoyagePasse.getAll(), ManagerPreferenceVoyageur.getAll(), ManagerLangueVoyageur.getAll(), ManagerVoyageFutur.getAll(), R.drawable.pr_chat, "Expert"));
-        listeVoyageur.add(new Voyageur(30, "Toto", "titi", "29/10/1987",  "Japon", "f",ManagerVoyagePasse.getAll(), ManagerPreferenceVoyageur.getAll(), ManagerLangueVoyageur.getAll(), ManagerVoyageFutur.getAll(), R.drawable.pr_monde, "Expert"));
-        listeVoyageur.add(new Voyageur(40, "bob", "avec cheveu", "29/10/1987",  "Brésil", "h", ManagerVoyagePasse.getAll(), ManagerPreferenceVoyageur.getAll(), ManagerLangueVoyageur.getAll(), ManagerVoyageFutur.getAll(), R.drawable.pr_phoque, "Expert"));
 
 
-    }
+    public static ArrayList<Voyageur> getAll(Context ctx){
+        ArrayList<Voyageur> listeVoyageur = new ArrayList<>();
+        SQLiteDatabase bd = ConnexionBD.getBD(ctx);
+        Cursor c = bd.rawQuery(queryGetAll,null);
 
-    public static ArrayList<Voyageur> getAll(){
-        if(listeVoyageur == null)
-            init();
+        while (c.moveToNext()){
+            Voyageur e = new Voyageur();
+            e.setIdVoyageur(c.getInt(0));
+            e.setNom(c.getString(1));
+            e.setPenom(c.getString(2));
+            e.setDateNaissance(c.getString(3));
+            e.setPaysNaissance(c.getString(4));
+            e.setSexe(c.getString(5));
+            e.setRessImgProfil(c.getString(6));
+            e.setCategorieVoyageur(c.getString(7));
+            e.setListeInvitationVoyageFutur(ManagerInvitationVoyageFutur.getAllByIdVoyageurReceveur(ctx, c.getInt(0)));
+            e.setListeLangueVoyageur(ManagerLangueVoyageur.getAllByIdVoyageur(ctx, c.getInt(0)));
+            e.setListePreferenceVoyageur(ManagerPreferenceVoyageur.getAllByIdVoyageur(ctx, c.getInt(0)));
+            e.setListeVoyageFutur(ManagerVoyageFutur.getAllByIdVoyageur(ctx, c.getInt(0)));
+            e.setListeVoyagePasse(ManagerVoyagePasse.getAllByIdVoyageur(ctx, c.getInt(0)));
+
+            listeVoyageur.add(e);
+        }
+
+        c.close();
+        ConnexionBD.close();
         return listeVoyageur;
     }
 
-    public static Voyageur getById(int idCompare){
-        if(listeVoyageur == null)
-            init();
+    public static Voyageur getById(Context ctx, int idCompare){
+        ArrayList<Voyageur> listeVoyageur = getAll(ctx);
+
         Voyageur retour = null;
         for (Voyageur v :
                 listeVoyageur) {

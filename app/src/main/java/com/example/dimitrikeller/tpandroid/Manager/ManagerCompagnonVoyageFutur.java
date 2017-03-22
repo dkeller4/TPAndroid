@@ -3,8 +3,10 @@ package com.example.dimitrikeller.tpandroid.Manager;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.dimitrikeller.tpandroid.Entite.Attraction;
 import com.example.dimitrikeller.tpandroid.Entite.AttractionPays;
 import com.example.dimitrikeller.tpandroid.Entite.CompagnonVoyageFutur;
 import com.example.dimitrikeller.tpandroid.Service.ConnexionBD;
@@ -20,38 +22,42 @@ public class ManagerCompagnonVoyageFutur {
 
     public static String COMPAGNON_VOYAGE_FUTUR_ID_VOYAGE = "idVoyage";
     public static String COMPAGNON_VOYAGE_FUTUR_ID_VOYAGEUR ="idVoyageur";
-    public static String COMPAGNON_VOYAGE_FUTUR_TABLE = "attractionPays";
+    public static String COMPAGNON_VOYAGE_FUTUR_TABLE = "CompagnonVoyage";
 
-    public static String ATTRACTION_PAYS_TABLE_CREATE = "create table " + COMPAGNON_VOYAGE_FUTUR_TABLE + "(" +
+    public static String COMPAGNON_VOYAGE_FUTUR_TABLE_CREATE = "create table " + COMPAGNON_VOYAGE_FUTUR_TABLE + "(" +
             COMPAGNON_VOYAGE_FUTUR_ID_VOYAGE + " INTEGER " +
             COMPAGNON_VOYAGE_FUTUR_ID_VOYAGEUR+ "INTEGER);";
 
-    public static String DROP_ATTRACTION_PAYS_TABLE = "drop table if exists + " + COMPAGNON_VOYAGE_FUTUR_TABLE;
+    public static String DROP_ATTRACTION_PAYS_TABLE = "drop table if exists " + COMPAGNON_VOYAGE_FUTUR_TABLE;
 
     public static String queryGetAll = "select * from " + COMPAGNON_VOYAGE_FUTUR_TABLE;
 
 
+    public static ArrayList<CompagnonVoyageFutur> getAll(Context ctx){
 
-    private static ArrayList<CompagnonVoyageFutur> listeCompagnon;
+        ArrayList<CompagnonVoyageFutur> listeCompagnon = new ArrayList<>();
+        SQLiteDatabase bd = ConnexionBD.getBD(ctx);
+        Cursor c = bd.rawQuery(queryGetAll,null);
 
-    public static void init(){
-        listeCompagnon = new ArrayList<>();
-        listeCompagnon.add(new CompagnonVoyageFutur(10, 10));
-        listeCompagnon.add(new CompagnonVoyageFutur(20, 20));
-        listeCompagnon.add(new CompagnonVoyageFutur(30, 30));
-        listeCompagnon.add(new CompagnonVoyageFutur(40, 40));
+        while (c.moveToNext()){
+            CompagnonVoyageFutur e = new CompagnonVoyageFutur();
+            e.setIdVoyageFutur(c.getInt(0));
+            e.setIdVoyageurCompagnon(c.getInt(1));
 
-    }
+            listeCompagnon.add(e);
+        }
 
-    public static ArrayList<CompagnonVoyageFutur> getAll(){
-        if(listeCompagnon == null)
-            init();
+        c.close();
+        ConnexionBD.close();
+
+
+
         return listeCompagnon;
     }
 
-    public static CompagnonVoyageFutur getByIdVoyageurCompagnon(int idCompare){
-        if(listeCompagnon == null)
-            init();
+    public static CompagnonVoyageFutur getByIdVoyageurCompagnon(Context ctx, int idCompare){
+        ArrayList<CompagnonVoyageFutur> listeCompagnon = getAll(ctx);
+
         CompagnonVoyageFutur retour = null;
         for (CompagnonVoyageFutur c :
                 listeCompagnon) {
@@ -61,9 +67,8 @@ public class ManagerCompagnonVoyageFutur {
         return  retour;
     }
 
-    public static CompagnonVoyageFutur getByIdVoyageFutur(int idCompare){
-        if(listeCompagnon == null)
-            init();
+    public static CompagnonVoyageFutur getByIdVoyageFutur(Context ctx,int idCompare){
+        ArrayList<CompagnonVoyageFutur> listeCompagnon = getAll(ctx);
         CompagnonVoyageFutur retour = null;
         for (CompagnonVoyageFutur c :
                 listeCompagnon) {
@@ -73,9 +78,8 @@ public class ManagerCompagnonVoyageFutur {
         return  retour;
     }
 
-    public static ArrayList<CompagnonVoyageFutur> getAllByIdVoyageFutur(int idCompare){
-        if(listeCompagnon == null)
-            init();
+    public static ArrayList<CompagnonVoyageFutur> getAllByIdVoyageFutur(Context ctx,int idCompare){
+        ArrayList<CompagnonVoyageFutur> listeCompagnon = getAll(ctx);
         ArrayList<CompagnonVoyageFutur> retour = new ArrayList<>();
 
         for (CompagnonVoyageFutur c :

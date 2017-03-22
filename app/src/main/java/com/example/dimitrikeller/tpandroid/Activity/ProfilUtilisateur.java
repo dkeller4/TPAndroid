@@ -43,10 +43,10 @@ public class ProfilUtilisateur extends AppCompatActivity {
 
         idVoyageur = 30;
         leVoyageur = new Voyageur();
-        leVoyageur = ManagerVoyageur.getById(idVoyageur);
+        leVoyageur = ManagerVoyageur.getById(this, idVoyageur);
 
         pu_img_utilisateur = (ImageView) findViewById(R.id.pu_img_utilisateur);
-        pu_img_utilisateur.setImageResource(leVoyageur.getRessImgProfil());
+        pu_img_utilisateur.setImageResource(Integer.parseInt(leVoyageur.getRessImgProfil()));
 
         pu_tv_categorie = (TextView) findViewById(R.id.pu_tv_catégorie);
         pu_tv_categorie.setText(leVoyageur.getCategorieVoyageur());
@@ -81,29 +81,29 @@ public class ProfilUtilisateur extends AppCompatActivity {
 
         pu_tv_listeLangue = (TextView) findViewById(R.id.pu_listeLangue);
         ArrayList<LangueVoyageur> langue = new ArrayList<>();
-        langue = ManagerLangueVoyageur.getAllByIdVoyageur(idVoyageur);
+        langue = ManagerLangueVoyageur.getAllByIdVoyageur(this, idVoyageur);
         int nbLangues = langue.size();
         String lesLangues = null;
-        if (nbLangues ==1) lesLangues = ManagerLangue.getById(langue.get(0).getIdLangue()).getLangue();
-        if (nbLangues ==2) lesLangues = (ManagerLangue.getById(langue.get(0).getIdLangue()).getLangue() + ", "
-                + ManagerLangue.getById(langue.get(1).getIdLangue()).getLangue());
-        if (nbLangues ==3) lesLangues = ManagerLangue.getById(langue.get(0).getIdLangue()).getLangue()+ ", "
-                + ManagerLangue.getById(langue.get(1).getIdLangue()).getLangue()+ ", "
-                + ManagerLangue.getById(langue.get(2).getIdLangue()).getLangue();
+        if (nbLangues ==1) lesLangues = ManagerLangue.getById(this, langue.get(0).getIdLangue()).getLangue();
+        if (nbLangues ==2) lesLangues = (ManagerLangue.getById(this, langue.get(0).getIdLangue()).getLangue() + ", "
+                + ManagerLangue.getById(this, langue.get(1).getIdLangue()).getLangue());
+        if (nbLangues ==3) lesLangues = ManagerLangue.getById(this, langue.get(0).getIdLangue()).getLangue()+ ", "
+                + ManagerLangue.getById(this, langue.get(1).getIdLangue()).getLangue()+ ", "
+                + ManagerLangue.getById(this, langue.get(2).getIdLangue()).getLangue();
 
         pu_tv_listeLangue.setText(lesLangues);
 
         pu_tv_listePreference = (TextView) findViewById(R.id.pu_listePreference);
         ArrayList<PreferenceVoyageur> preference = new ArrayList<>();
-        preference = ManagerPreferenceVoyageur.getAllByIdVoyageur(idVoyageur);
+        preference = ManagerPreferenceVoyageur.getAllByIdVoyageur(this, idVoyageur);
         int nbPreferences = preference.size();
         String lesPreferences = null;
-        if ( nbPreferences ==1) lesPreferences = ManagerPreference.getById(preference.get(0).getIdPreference()).getType();
-        if ( nbPreferences ==2) lesPreferences = (ManagerPreference.getById(preference.get(0).getIdPreference()).getType() + ", "
-                + ManagerPreference.getById(preference.get(1).getIdPreference()).getType());
-        if ( nbPreferences ==3) lesPreferences = ManagerPreference.getById(preference.get(0).getIdPreference()).getType()+ ", "
-                + ManagerPreference.getById(preference.get(1).getIdPreference()).getType()+ ", "
-                + ManagerPreference.getById(preference.get(2).getIdPreference()).getType();
+        if ( nbPreferences ==1) lesPreferences = ManagerPreference.getById(this, preference.get(0).getIdPreference()).getType();
+        if ( nbPreferences ==2) lesPreferences = (ManagerPreference.getById(this, preference.get(0).getIdPreference()).getType() + ", "
+                + ManagerPreference.getById(this, preference.get(1).getIdPreference()).getType());
+        if ( nbPreferences ==3) lesPreferences = ManagerPreference.getById(this, preference.get(0).getIdPreference()).getType()+ ", "
+                + ManagerPreference.getById(this, preference.get(1).getIdPreference()).getType()+ ", "
+                + ManagerPreference.getById(this, preference.get(2).getIdPreference()).getType();
 
         pu_tv_listePreference.setText(lesPreferences);
 

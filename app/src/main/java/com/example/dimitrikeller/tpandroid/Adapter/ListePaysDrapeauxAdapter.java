@@ -3,6 +3,7 @@ package com.example.dimitrikeller.tpandroid.Adapter;
 import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +13,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.dimitrikeller.tpandroid.Entite.Pays;
+import com.example.dimitrikeller.tpandroid.Manager.ManagerPays;
 import com.example.dimitrikeller.tpandroid.R;
+import com.example.dimitrikeller.tpandroid.Service.BDHelper;
 
+import java.lang.reflect.Field;
 import java.util.List;
 
 /**
@@ -31,7 +35,7 @@ public class ListePaysDrapeauxAdapter extends ArrayAdapter {
     FrameLayout fl;
     ImageButton imgBtn;
     TextView tv;
-
+    int imgIdressource;
 
     public ListePaysDrapeauxAdapter(Context context, int resource, List<Pays> objects) {
         super(context, 0, objects);
@@ -47,8 +51,19 @@ public class ListePaysDrapeauxAdapter extends ArrayAdapter {
             convertView = inflator.inflate(idLayout,null);
         }
 
+
+        String name = lePays.getRessImgDrapeau();
+        Log.d("debug", ""+ name);
+
+
+            imgIdressource = ctx.getResources().getIdentifier(name, "drawable", "com.example.dimitrikeller.tpandroid");
+
+
+
+
+
         imgBtn = (ImageButton) convertView.findViewById(R.id.avp_img_btn);
-        imgBtn.setImageResource(lePays.getRessImgDrapeau());
+        imgBtn.setImageResource(imgIdressource);
         tv= (TextView) convertView.findViewById(R.id.avp_tv);
         tv.setText(lePays.getNom());
 

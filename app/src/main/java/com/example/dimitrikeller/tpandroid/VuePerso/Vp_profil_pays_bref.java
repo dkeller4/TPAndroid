@@ -43,7 +43,7 @@ public class Vp_profil_pays_bref extends LinearLayout{
 
         idPays =10;
         lePays = new Pays();
-        lePays= ManagerPays.getById(idPays);
+        lePays= ManagerPays.getById(context, idPays);
 
         vp_ppb_tv_nom = new TextView(ctx);
         vp_ppb_tv_nom.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -55,7 +55,7 @@ public class Vp_profil_pays_bref extends LinearLayout{
 
         vp_ppb_img = new ImageView(ctx);
         vp_ppb_img.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        vp_ppb_img.setImageResource(lePays.getRessImgPays());
+        vp_ppb_img.setImageResource(Integer.parseInt(lePays.getRessImgPays()));
         vp_ppb_img.setPadding(0,0,0,0);
         vp_ppb_img.setAdjustViewBounds(true);
 
@@ -130,12 +130,12 @@ public class Vp_profil_pays_bref extends LinearLayout{
         int nbLangues = langue.size();
         Log.d("debug", "" + nbLangues);
         String lesLangues = null;
-        if (nbLangues ==1) lesLangues = ManagerLangue.getById(langue.get(0).getIdLangue()).getLangue();
-        if (nbLangues ==2) lesLangues = (ManagerLangue.getById(langue.get(0).getIdLangue()).getLangue() + ", "
-                + ManagerLangue.getById(langue.get(1).getIdLangue()).getLangue());
-        if (nbLangues ==3) lesLangues = ManagerLangue.getById(langue.get(0).getIdLangue()).getLangue()+ ", "
-                + ManagerLangue.getById(langue.get(1).getIdLangue()).getLangue()+ ", "
-                + ManagerLangue.getById(langue.get(2).getIdLangue()).getLangue();
+        if (nbLangues ==1) lesLangues = ManagerLangue.getById(context, langue.get(0).getIdLangue()).getLangue();
+        if (nbLangues ==2) lesLangues = (ManagerLangue.getById(context, langue.get(0).getIdLangue()).getLangue() + ", "
+                + ManagerLangue.getById(context, langue.get(1).getIdLangue()).getLangue());
+        if (nbLangues ==3) lesLangues = ManagerLangue.getById(context, langue.get(0).getIdLangue()).getLangue()+ ", "
+                + ManagerLangue.getById(context, langue.get(1).getIdLangue()).getLangue()+ ", "
+                + ManagerLangue.getById(context, langue.get(2).getIdLangue()).getLangue();
 
         vp_ppb_tv_langues = new TextView(ctx);
         vp_ppb_tv_langues.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));

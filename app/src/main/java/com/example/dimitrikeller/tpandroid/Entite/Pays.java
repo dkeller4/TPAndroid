@@ -14,8 +14,8 @@ public class Pays {
     private String continent;
     private String capitale;
     private String devise;
-    private int ressImgDrapeau;
-    private int ressImgPays;
+    private String ressImgDrapeau;
+    private String ressImgPays;
     private ArrayList<LanguePays> listeLanguePays;
     private ArrayList<PreferencePays> listePreferencePays;
     private ArrayList<AttractionPays> listeAttractionPays;
@@ -25,7 +25,7 @@ public class Pays {
 
     }
 
-    public Pays(int idPays, String nom, int population, String continent, String capitale, String devise, int ressImgDrapeau, int ressImgPays, ArrayList<LanguePays> listeLanguePays, ArrayList<PreferencePays> listePreferencePays, ArrayList<AttractionPays> listeAttractionPays) {
+    public Pays(int idPays, String nom, int population, String continent, String capitale, String devise, String ressImgDrapeau, String ressImgPays, ArrayList<LanguePays> listeLanguePays, ArrayList<PreferencePays> listePreferencePays, ArrayList<AttractionPays> listeAttractionPays) {
         this.idPays = idPays;
         this.nom = nom;
         this.population = population;
@@ -87,19 +87,19 @@ public class Pays {
         this.continent = continent;
     }
 
-    public int getRessImgDrapeau() {
+    public String getRessImgDrapeau() {
         return ressImgDrapeau;
     }
 
-    public void setRessImgDrapeau(int ressImgDrapeau) {
+    public void setRessImgDrapeau(String ressImgDrapeau) {
         this.ressImgDrapeau = ressImgDrapeau;
     }
 
-    public int getRessImgPays() {
+    public String getRessImgPays() {
         return ressImgPays;
     }
 
-    public void setRessImgPays(int ressImgPays) {
+    public void setRessImgPays(String ressImgPays) {
         this.ressImgPays = ressImgPays;
     }
 

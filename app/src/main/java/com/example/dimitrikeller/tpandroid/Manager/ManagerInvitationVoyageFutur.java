@@ -2,6 +2,7 @@ package com.example.dimitrikeller.tpandroid.Manager;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.dimitrikeller.tpandroid.Entite.CompagnonVoyageFutur;
@@ -37,30 +38,46 @@ public class ManagerInvitationVoyageFutur {
 
     public static String DROP_INVITATION_TABLE = "drop table if exists "+ INVITATION_TABLE ;
 
-    private static String queryGetAll = "select * from "+ INVITATION_TABLE;
+    public static String queryGetAll = "select * from "+ INVITATION_TABLE;
 
 
-    private static ArrayList<InvitationVoyageFutur> listeInvitationVoyageFutur;
+    public static ArrayList<InvitationVoyageFutur> getAll(Context ctx){
+        ArrayList<InvitationVoyageFutur> listeInvitationVoyageFutur = new ArrayList<>();
+        SQLiteDatabase bd = ConnexionBD.getBD(ctx);
+        Cursor c = bd.rawQuery(queryGetAll,null);
 
-    public static void init(){
-        listeInvitationVoyageFutur = new ArrayList<>();
-        listeInvitationVoyageFutur.add(new InvitationVoyageFutur(10,10,10,20,true,false));
-        listeInvitationVoyageFutur.add(new InvitationVoyageFutur(20,20,20,10,true,false));
-        listeInvitationVoyageFutur.add(new InvitationVoyageFutur(30,30,40,30,true,false));
-        listeInvitationVoyageFutur.add(new InvitationVoyageFutur(40,40,30,40,true,false));
+        while (c.moveToNext()){
+            InvitationVoyageFutur e = new InvitationVoyageFutur();
+            e.setIdInvitation(c.getInt(0));
+            e.setIdVoyageFutur(c.getInt(1));
+            e.setIdVoyageurEnvoyeur(c.getInt(2));
+            e.setIdVoyageurReceveur(c.getInt(3));
+            int estEnAttente = c.getInt(4);
+            if (estEnAttente == 1) {
+                e.setEstEnAttente(true);
+            }
+            else {
+                e.setEstEnAttente(false);
+            }
+            int estAccepte = c.getInt(5);
+            if (estAccepte == 1) {
+                e.setEstAccepte(true);
+            }
+            else {
+                e.setEstAccepte(false);
+            }
 
-    }
+            listeInvitationVoyageFutur.add(e);
+        }
 
-
-    public static ArrayList<InvitationVoyageFutur> getAll(){
-        if(listeInvitationVoyageFutur == null)
-            init();
+        c.close();
+        ConnexionBD.close();
         return listeInvitationVoyageFutur;
     }
 
-    public static InvitationVoyageFutur getByIdVoyageFutur(int idCompare){
-        if(listeInvitationVoyageFutur == null)
-            init();
+    public static InvitationVoyageFutur getByIdVoyageFutur(Context ctx, int idCompare){
+        ArrayList<InvitationVoyageFutur> listeInvitationVoyageFutur = getAll(ctx);
+
         InvitationVoyageFutur retour = null;
         for (InvitationVoyageFutur v :
                 listeInvitationVoyageFutur) {
@@ -71,9 +88,9 @@ public class ManagerInvitationVoyageFutur {
     }
 
 
-    public static InvitationVoyageFutur getByIdVoyageurEnvoyeur(int idCompare){
-        if(listeInvitationVoyageFutur == null)
-            init();
+    public static InvitationVoyageFutur getByIdVoyageurEnvoyeur(Context ctx, int idCompare){
+        ArrayList<InvitationVoyageFutur> listeInvitationVoyageFutur = getAll(ctx);
+
         InvitationVoyageFutur retour = null;
         for (InvitationVoyageFutur v :
                 listeInvitationVoyageFutur) {
@@ -83,9 +100,9 @@ public class ManagerInvitationVoyageFutur {
         return  retour;
     }
 
-    public static InvitationVoyageFutur getByIdVoyageurReceveur(int idCompare){
-        if(listeInvitationVoyageFutur == null)
-            init();
+    public static InvitationVoyageFutur getByIdVoyageurReceveur(Context ctx, int idCompare){
+        ArrayList<InvitationVoyageFutur> listeInvitationVoyageFutur = getAll(ctx);
+
         InvitationVoyageFutur retour = null;
         for (InvitationVoyageFutur v :
                 listeInvitationVoyageFutur) {
@@ -96,9 +113,9 @@ public class ManagerInvitationVoyageFutur {
     }
 
 
-    public static ArrayList<InvitationVoyageFutur> getAllByIdVoyageurEnvoyeur(int idCompare){
-        if(listeInvitationVoyageFutur == null)
-            init();
+    public static ArrayList<InvitationVoyageFutur> getAllByIdVoyageurEnvoyeur(Context ctx, int idCompare){
+        ArrayList<InvitationVoyageFutur> listeInvitationVoyageFutur = getAll(ctx);
+
         ArrayList<InvitationVoyageFutur> retour = new ArrayList<>();
 
         for (InvitationVoyageFutur v :
@@ -109,9 +126,9 @@ public class ManagerInvitationVoyageFutur {
         return  retour;
     }
 
-    public static ArrayList<InvitationVoyageFutur> getAllByIdVoyageurReceveur(int idCompare){
-        if(listeInvitationVoyageFutur == null)
-            init();
+    public static ArrayList<InvitationVoyageFutur> getAllByIdVoyageurReceveur(Context ctx, int idCompare){
+        ArrayList<InvitationVoyageFutur> listeInvitationVoyageFutur = getAll(ctx);
+
         ArrayList<InvitationVoyageFutur> retour = new ArrayList<>();
 
         for (InvitationVoyageFutur v :
@@ -148,7 +165,7 @@ public class ManagerInvitationVoyageFutur {
 
     public static void delete(int id1, Context ctx){
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
-        bd.delete(INVITATION_TABLE, INVITATION_ID + " = ? AND ", new String[]{String.valueOf(id1)});
+        bd.delete(INVITATION_TABLE, INVITATION_ID + " = ? ", new String[]{String.valueOf(id1)});
 
     }
 
@@ -164,7 +181,7 @@ public class ManagerInvitationVoyageFutur {
         cv.put(INVITATION_ACCEPTE, entite.isEstAccepte());
 
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
-        bd.update(INVITATION_TABLE, cv, INVITATION_ID + " = ? AND " , new String[]{String.valueOf(entite.getIdInvitation())});
+        bd.update(INVITATION_TABLE, cv, INVITATION_ID + " = ? " , new String[]{String.valueOf(entite.getIdInvitation())});
 
     }
 

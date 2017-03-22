@@ -27,7 +27,7 @@ public class AjoutVoyageFutur extends AppCompatActivity {
         setContentView(R.layout.activity_ajout_voyage_futur);
 
         actv = (AutoCompleteTextView) findViewById(R.id.avf_autoCompleteTextView1);
-        lesPays = ManagerPays.getAll();
+        lesPays = ManagerPays.getAll(this);
         listeNomPays = new String[lesPays.size()];
 
         int i = 0;

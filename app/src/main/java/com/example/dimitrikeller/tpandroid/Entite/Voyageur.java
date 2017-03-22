@@ -20,7 +20,8 @@ public class Voyageur {
     private ArrayList<PreferenceVoyageur> listePreferenceVoyageur;
     private ArrayList<LangueVoyageur> listeLangueVoyageur;
     private ArrayList<VoyageFutur> listeVoyageFutur;
-    private int RessImgProfil;
+    private ArrayList<InvitationVoyageFutur> listeInvitationVoyageFutur;
+    private String RessImgProfil;
     private String categorieVoyageur;
 
 
@@ -28,7 +29,15 @@ public class Voyageur {
 
     }
 
-    public Voyageur(int idVoyageur, String penom, String nom, String dateNaissance, String paysNaissance, String sexe, ArrayList<VoyagePasse> listeVoyagePasse, ArrayList<PreferenceVoyageur> listePreferenceVoyageur, ArrayList<LangueVoyageur> listeLangueVoyageur, ArrayList<VoyageFutur> listeVoyageFutur, int ressImgProfil, String categorieVoyageur) {
+    public ArrayList<InvitationVoyageFutur> getListeInvitationVoyageFutur() {
+        return listeInvitationVoyageFutur;
+    }
+
+    public void setListeInvitationVoyageFutur(ArrayList<InvitationVoyageFutur> listeInvitationVoyageFutur) {
+        this.listeInvitationVoyageFutur = listeInvitationVoyageFutur;
+    }
+
+    public Voyageur(int idVoyageur, String penom, String nom, String dateNaissance, String paysNaissance, String sexe, ArrayList<VoyagePasse> listeVoyagePasse, ArrayList<PreferenceVoyageur> listePreferenceVoyageur, ArrayList<LangueVoyageur> listeLangueVoyageur, ArrayList<VoyageFutur> listeVoyageFutur, String ressImgProfil, String categorieVoyageur) {
         this.idVoyageur = idVoyageur;
         this.penom = penom;
         this.nom = nom;
@@ -126,11 +135,11 @@ public class Voyageur {
         this.listeVoyageFutur = listeVoyageFutur;
     }
 
-    public int getRessImgProfil() {
+    public String getRessImgProfil() {
         return RessImgProfil;
     }
 
-    public void setRessImgProfil(int ressImgProfil) {
+    public void setRessImgProfil(String ressImgProfil) {
         RessImgProfil = ressImgProfil;
     }
 

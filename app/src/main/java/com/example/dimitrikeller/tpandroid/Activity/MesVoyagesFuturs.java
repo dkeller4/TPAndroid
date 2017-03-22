@@ -30,7 +30,7 @@ public class MesVoyagesFuturs extends AppCompatActivity {
 
         lv = (ListView) findViewById(R.id.mvf_listView);
 
-        List<VoyageFutur> vf = ManagerVoyageFutur.getAllByIdVoyageur(idVoyageur);
+        List<VoyageFutur> vf = ManagerVoyageFutur.getAllByIdVoyageur(this,idVoyageur);
 
 
         if(vf.size()>0) {

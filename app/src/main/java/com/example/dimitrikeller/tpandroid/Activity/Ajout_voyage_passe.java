@@ -49,7 +49,7 @@ public class Ajout_voyage_passe extends AppCompatActivity {
         //Ajout du GridView
         gv= (GridView) findViewById(R.id.ajout_voyage_passe_drapeaux);
         gv.setColumnWidth(wScreen/3);
-        lesPays = ManagerPays.getAll();
+        lesPays = ManagerPays.getAll(this);
         lesPaysSelect = new ArrayList<Pays>();
         adaptGv = new ListePaysDrapeauxAdapter(ctx, R.layout.vue_perso_ajout_voyage_passe,lesPays);
         gv.setAdapter(adaptGv);
