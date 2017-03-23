@@ -1,9 +1,12 @@
 package com.example.dimitrikeller.tpandroid.Adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +15,15 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.dimitrikeller.tpandroid.Entite.Pays;
 import com.example.dimitrikeller.tpandroid.Entite.VoyageFutur;
 import com.example.dimitrikeller.tpandroid.Manager.ManagerPays;
+import com.example.dimitrikeller.tpandroid.Manager.ManagerVoyageFutur;
 import com.example.dimitrikeller.tpandroid.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -33,6 +39,11 @@ public class ListeVoyageFuturAdapter extends ArrayAdapter<VoyageFutur> {
     Button vp_lvf_btn_invitation, vp_lvf_btn_compagnon;
     Date dateDep, dateRet;
     String dateDepart, dateRetour;
+    int imgIdressource;
+    Pays lePays;
+    private final String id = "xczvxcvdwerfrsdfs";
+    SharedPreferences pref;
+    int idVoyageur;
 
     public ListeVoyageFuturAdapter(Context context, int resource, List<VoyageFutur> objects) {
         super(context, 0, objects);
@@ -44,15 +55,23 @@ public class ListeVoyageFuturAdapter extends ArrayAdapter<VoyageFutur> {
     @Override
     public View getView(int position, View convertView,  ViewGroup parent) {
 
-        VoyageFutur vf = getItem(position);
+        VoyageFutur vf = (VoyageFutur) getItem(position);
 
         if(convertView == null){
             LayoutInflater inflator = LayoutInflater.from(ctx);
             convertView = inflator.inflate(idLayout,null);
         }
 
+        lePays = new Pays();
+        int idPays = vf.getIdPays();
+        lePays = ManagerPays.getById(ctx, idPays);
+        Log.d("Debug", "" + idPays);
+        String name = lePays.getRessImgPays();
+        imgIdressource = ctx.getResources().getIdentifier(name, "drawable", "com.example.dimitrikeller.tpandroid");
+
+
         vp_lvf_img = (ImageButton) convertView.findViewById(R.id.vp_listeVoyageFutur_img);
-        vp_lvf_img.setImageResource(Integer.parseInt(ManagerPays.getById(ctx, vf.getIdPays()).getRessImgPays()));
+        vp_lvf_img.setImageResource(imgIdressource);
 
         vp_lvf_tv_nom = (TextView) convertView.findViewById(R.id.vp_listeVoyageFutur_tv_nomPays);
         vp_lvf_tv_nom.setText(Integer.parseInt(ManagerPays.getById(ctx, vf.getIdPays()).getNom()));

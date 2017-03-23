@@ -1,41 +1,31 @@
 package com.example.dimitrikeller.tpandroid.Adapter;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dimitrikeller.tpandroid.Entite.Pays;
-import com.example.dimitrikeller.tpandroid.Manager.ManagerPays;
 import com.example.dimitrikeller.tpandroid.R;
-import com.example.dimitrikeller.tpandroid.Service.BDHelper;
 
-import java.lang.reflect.Field;
 import java.util.List;
 
 /**
- * Created by Marianne on 2017-03-15.
+ * Created by Marianne on 2017-03-23.
  */
 
-
-public class ListePaysDrapeauxAdapter extends ArrayAdapter {
+public class ListeBrowsePaysAdapter extends ArrayAdapter<Pays> {
 
     int idLayout;
     Context ctx;
-    FrameLayout fl;
-    ImageView imgBtn;
-    TextView tv;
+    TextView tv_nom, tv_capitale, tv_continent;
+    ImageView img;
     int imgIdressource;
 
-    public ListePaysDrapeauxAdapter(Context context, int resource, List<Pays> objects) {
+    public ListeBrowsePaysAdapter(Context context, int resource, List<Pays> objects) {
         super(context, 0, objects);
         idLayout=resource;
         ctx = context;
@@ -49,19 +39,20 @@ public class ListePaysDrapeauxAdapter extends ArrayAdapter {
             convertView = inflator.inflate(idLayout,null);
         }
 
-
-        String name = lePays.getRessImgDrapeau();
+        String name = lePays.getRessImgPays();
         imgIdressource = ctx.getResources().getIdentifier(name, "drawable", "com.example.dimitrikeller.tpandroid");
 
-        imgBtn = (ImageView) convertView.findViewById(R.id.avp_img_btn);
-        imgBtn.setImageResource(imgIdressource);
-        convertView.setMinimumHeight(60);
-        tv= (TextView) convertView.findViewById(R.id.avp_tv);
-        tv.setText(lePays.getNom());
 
+        tv_nom = (TextView) convertView.findViewById(R.id.vppp_tv_nom);
+        tv_capitale = (TextView) convertView.findViewById(R.id.vppp_tv_capitale);
+        tv_continent = (TextView) convertView.findViewById(R.id.vppp_tv_continent);
+        img= (ImageView) convertView.findViewById(R.id.vppp_img_pays);
 
+        img.setImageResource(imgIdressource);
 
+        tv_nom.setText(lePays.getNom());
+        tv_capitale.setText(lePays.getCapitale());
+        tv_continent.setText(lePays.getContinent());
         return convertView;
     }
-
 }

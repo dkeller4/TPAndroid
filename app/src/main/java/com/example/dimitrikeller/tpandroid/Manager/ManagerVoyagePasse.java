@@ -33,7 +33,6 @@ public class ManagerVoyagePasse {
     public static String queryGetAll = "select * from "+ VOYAGE_PASSE_TABLE;
 
 
-
     public static ArrayList<VoyagePasse> getAll(Context ctx){
         ArrayList<VoyagePasse> listeVoyagePasse = new ArrayList<>();
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);

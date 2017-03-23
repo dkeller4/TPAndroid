@@ -60,7 +60,7 @@ public class ChoixImageProfil extends AppCompatActivity {
                 voy.setRessImgProfil(imgRess);
                 ManagerVoyageur.update(voy, ctx);
 
-                Intent intent = new Intent(ChoixImageProfil.this, ProfilUtilisateur.class );
+                Intent intent = new Intent(ChoixImageProfil.this, AjoutVoyagePasse.class );
                 startActivity(intent);
 
             }

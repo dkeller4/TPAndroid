@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+
+    <ImageView
+        android:id="@+id/vppp_img_pays"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/pays_allemagne"
+        android:layout_weight="2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/vppp_tv_nom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nom du pays"/>
+
+        <TextView
+            android:id="@+id/vppp_tv_capitale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Capitale"/>
+
+        <TextView
+            android:id="@+id/vppp_tv_continent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="devise"/>
+
+    </LinearLayout>
+</LinearLayout>

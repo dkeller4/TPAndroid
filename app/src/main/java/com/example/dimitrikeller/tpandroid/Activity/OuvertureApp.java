@@ -43,7 +43,7 @@ public class OuvertureApp extends AppCompatActivity {
         btnDerniereSession.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(OuvertureApp.this, ProfilUtilisateur.class);
+                Intent intent = new Intent(OuvertureApp.this, MenuPrincipal.class);
                 startActivity(intent);
             }
         });

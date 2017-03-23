@@ -28,7 +28,7 @@ public class ManagerVoyageFutur {
     public static String VOYAGE_FUTUR_TABLE ="voyageFutur";
 
     public static String VOYAGE_FUTUR_CREATE = "create table " + VOYAGE_FUTUR_TABLE + "("+
-            VOYAGE_FUTUR_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            VOYAGE_FUTUR_ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " +
             VOYAGE_FUTUR_ID_PAYS + " INTEGER, " +
             VOYAGE_FUTUR_ID_VOYAGEUR + " INTEGER, " +
             VOYAGE_FUTUR_DATE_DEPART + " TEXT, " +
@@ -52,7 +52,7 @@ public class ManagerVoyageFutur {
             VoyageFutur e = new VoyageFutur();
             e.setIdVoyageFutur(c.getInt(0));
             e.setIdPays(c.getInt(1));
-            e.setIdVoyageFutur(c.getInt(2));
+            e.setIdVoyageurPrincipal(c.getInt(2));
             e.setDateDepart(c.getString(3));
             e.setDateRetour(c.getString(4));
             int estFlexible = c.getInt(5);
@@ -121,8 +121,6 @@ public class ManagerVoyageFutur {
     public static long add(VoyageFutur entiteToAdd, Context ctx){
         long retour = -1;
         ContentValues cv = new ContentValues();
-
-        cv.put(VOYAGE_FUTUR_ID_PAYS, entiteToAdd.getIdPays());
         cv.put(VOYAGE_FUTUR_ID_VOYAGEUR, entiteToAdd.getIdVoyageurPrincipal());
         cv.put(VOYAGE_FUTUR_DATE_DEPART, entiteToAdd.getDateDepart());
         cv.put(VOYAGE_FUTUR_DATE_RETOUR, entiteToAdd.getDateRetour());
@@ -150,8 +148,6 @@ public class ManagerVoyageFutur {
 
     public static void update(VoyageFutur entite, Context ctx){
         ContentValues cv = new ContentValues();
-
-        cv.put(VOYAGE_FUTUR_ID_PAYS, entite.getIdPays());
         cv.put(VOYAGE_FUTUR_ID_VOYAGEUR, entite.getIdVoyageurPrincipal());
         cv.put(VOYAGE_FUTUR_DATE_DEPART, entite.getDateDepart());
         cv.put(VOYAGE_FUTUR_DATE_RETOUR, entite.getDateRetour());

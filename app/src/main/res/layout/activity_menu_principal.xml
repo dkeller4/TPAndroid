@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dimitrikeller.tpandroid.Activity.MenuPrincipal">
+
+    <Button
+        android:id="@+id/mp_profil"
+        android:layout_width="150dp"
+        android:layout_height="367dp"
+        android:text="Votre profil"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-5dp"
+        android:background="@color/CompShade1"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/mp_pays"
+        android:layout_above="@+id/mp_compas"
+        android:layout_toLeftOf="@+id/mp_pays" />
+
+    <Button
+        android:id="@+id/mp_pays"
+        android:layout_width="245dp"
+        android:layout_height="140dp"
+        android:text="Découvrer les pays"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="-5dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/mp_voyageur"
+        android:layout_alignStart="@+id/mp_voyageur"
+        android:background="@color/CompShade2"
+        android:layout_above="@+id/mp_voyageur" />
+
+    <Button
+        android:id="@+id/mp_compas"
+        android:layout_width="389dp"
+        android:layout_height="158dp"
+        android:text="Compas de voyage"
+        tools:layout_editor_absoluteY="353dp"
+        tools:layout_editor_absoluteX="-2dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/PrimShade2"/>
+
+    <Button
+        android:id="@+id/mp_voyageur"
+        android:layout_width="246dp"
+        android:layout_height="237dp"
+        android:text="Les voyageurs"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="125dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/PrimShade3"
+        android:layout_above="@+id/mp_compas" />
+
+</RelativeLayout>

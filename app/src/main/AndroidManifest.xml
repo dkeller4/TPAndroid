@@ -33,6 +33,8 @@
         <activity android:name=".Activity.ProfilAttraction" />
         <activity android:name=".Activity.EnregistrementDonnePerso" />
         <activity android:name=".Activity.ChoixImageProfil" />
+        <activity android:name=".Activity.MenuPrincipal" />
+        <activity android:name=".Activity.SelecteurDeDestination"></activity>
     </application>
 
 </manifest>

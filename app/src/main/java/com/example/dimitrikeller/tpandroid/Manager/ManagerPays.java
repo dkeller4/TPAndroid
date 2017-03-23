@@ -271,6 +271,7 @@ public class ManagerPays {
             " (232,'Zimbabwe',13061000,'Afrique','Harare','Dollar','drap_zimbabwe','pays_enconstruction2');";
 
 
+
     public static String DROP_PAYS_TABLE = "drop table if exists "+ PAYS_TABLE ;
 
     public static String queryGetAll = "select * from "+ PAYS_TABLE;

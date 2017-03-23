@@ -1,6 +1,7 @@
 package com.example.dimitrikeller.tpandroid.Activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
@@ -8,6 +9,7 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -125,6 +127,28 @@ public class ProfilUtilisateur extends AppCompatActivity {
         pu_btn_ajoutVoyagePasse = (Button) findViewById(R.id.pu_btn_ajoutVoyagePasse);
         pu_btn_listeVoyageFutur = (Button) findViewById(R.id.pu_btn_listeVoyageFutur);
 
+        pu_btn_ajoutVoyageFutur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfilUtilisateur.this, AjoutVoyageFutur.class);
+                startActivity(intent);
+            }
+        });
 
+        pu_btn_ajoutVoyagePasse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfilUtilisateur.this, AjoutVoyagePasse.class);
+                startActivity(intent);
+            }
+        });
+
+        pu_btn_listeVoyageFutur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfilUtilisateur.this, MesVoyagesFuturs.class);
+                startActivity(intent);
+            }
+        });
     }
 }

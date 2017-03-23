@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/avp_fm">
+    android:id="@+id/avp_fm"
+    android:layout_margin="5dp">
 
-    <ImageButton
+    <ImageView
         android:id="@+id/avp_img_btn"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
         android:src="@drawable/drap_afghanistan" />
@@ -16,13 +17,13 @@
         android:id="@+id/avp_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:gravity="bottom|center"
+        android:layout_gravity="center"
+        android:gravity="center|right"
         android:paddingTop="20dp"
         android:text="Nom du Pays"
         android:textColor="#ffffffff"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:background="#50000000"/>
+        android:background="#50003C8F"/>
 
 </FrameLayout>

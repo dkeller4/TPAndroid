@@ -68,7 +68,7 @@ public class OuvertureNouvelleSession extends AppCompatActivity {
                     editeur.commit();
 
 
-                    Intent intent = new Intent(OuvertureNouvelleSession.this, ProfilUtilisateur.class);
+                    Intent intent = new Intent(OuvertureNouvelleSession.this, MenuPrincipal.class);
                     startActivity(intent);
 
                 }
