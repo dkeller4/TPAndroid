@@ -71,7 +71,7 @@ public class ManagerUtilisateur {
     public static long add(Utilisateur entiteToAdd, Context ctx){
         long retour = -1;
         ContentValues cv = new ContentValues();
-        cv.put(UTILISATEUR_ID, entiteToAdd.getIdVoyageur());
+
         cv.put(UTILISATEUR_IDENTIFIANT, entiteToAdd.getIdentifiant());
         cv.put(UTILISATEUR_MOTPASSE, entiteToAdd.getMotPasse());
 
@@ -97,7 +97,7 @@ public class ManagerUtilisateur {
 
     public static void update(Utilisateur entite, Context ctx){
         ContentValues cv = new ContentValues();
-        cv.put(UTILISATEUR_ID, entite.getIdVoyageur());
+
         cv.put(UTILISATEUR_IDENTIFIANT, entite.getIdentifiant());
         cv.put(UTILISATEUR_MOTPASSE, entite.getMotPasse());
 

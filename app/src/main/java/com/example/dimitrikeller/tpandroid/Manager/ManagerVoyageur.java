@@ -94,11 +94,12 @@ public class ManagerVoyageur {
     public static long add(Voyageur entiteToAdd, Context ctx){
         long retour = -1;
         ContentValues cv = new ContentValues();
+        cv.put(VOYAGEUR_ID, entiteToAdd.getIdVoyageur());
         cv.put(VOYAGEUR_NOM,entiteToAdd.getNom());
         cv.put(VOYAGEUR_PRENOM,entiteToAdd.getPenom());
         cv.put(VOYAGEUR_DATE_NAISSANCE,entiteToAdd.getDateNaissance());
-        cv.put(VOYAGEUR_PAYS_NAISSANCE, entiteToAdd.getDateNaissance());
-        cv.put(VOYAGEUR_SEXE, entiteToAdd.getPaysNaissance());
+        cv.put(VOYAGEUR_PAYS_NAISSANCE, entiteToAdd.getPaysNaissance());
+        cv.put(VOYAGEUR_SEXE, entiteToAdd.getSexe());
         cv.put(VOYAGEUR_IMG_PROFIL, entiteToAdd.getRessImgProfil());
         cv.put(VOYAGEUR_CATEGORIE, entiteToAdd.getCategorieVoyageur());
 
@@ -123,6 +124,7 @@ public class ManagerVoyageur {
 
     public static void update(Voyageur entite, Context ctx){
         ContentValues cv = new ContentValues();
+        cv.put(VOYAGEUR_ID, entite.getIdVoyageur());
         cv.put(VOYAGEUR_NOM,entite.getNom());
         cv.put(VOYAGEUR_PRENOM, entite.getPenom());
         cv.put(VOYAGEUR_DATE_NAISSANCE, entite.getDateNaissance());

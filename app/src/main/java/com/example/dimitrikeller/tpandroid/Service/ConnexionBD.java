@@ -11,7 +11,7 @@ public class ConnexionBD {
 
         private static SQLiteDatabase bd;
         private static String database = "voyage";
-        private static int version = 3;
+        private static int version = 4;
 
         public static SQLiteDatabase getBD(Context ctx){
             BDHelper pH = new BDHelper(ctx,database,null,version);

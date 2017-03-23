@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.example.dimitrikeller.tpandroid.Manager.ManagerAttraction;
 import com.example.dimitrikeller.tpandroid.Manager.ManagerAttractionPays;
 import com.example.dimitrikeller.tpandroid.Manager.ManagerCompagnonVoyageFutur;
+import com.example.dimitrikeller.tpandroid.Manager.ManagerImageProfil;
 import com.example.dimitrikeller.tpandroid.Manager.ManagerInvitationVoyageFutur;
 import com.example.dimitrikeller.tpandroid.Manager.ManagerLangue;
 import com.example.dimitrikeller.tpandroid.Manager.ManagerLanguePays;
@@ -38,6 +39,8 @@ public class BDHelper extends SQLiteOpenHelper {
         db.execSQL(ManagerAttractionPays.ATTRACTION_PAYS_TABLE_CREATE);
         db.execSQL(ManagerAttractionPays.queryINSERT);
         db.execSQL(ManagerCompagnonVoyageFutur.COMPAGNON_VOYAGE_FUTUR_TABLE_CREATE);
+        db.execSQL(ManagerImageProfil.IMG_TABLE_CREATE);
+        db.execSQL(ManagerImageProfil.queryINSERT);
         db.execSQL(ManagerInvitationVoyageFutur.INVITATION_TABLE_CREATE);
         db.execSQL(ManagerLangue.LANGUE_TABLE_CREATE);
         db.execSQL(ManagerLangue.queryINSERT);
@@ -62,6 +65,7 @@ public class BDHelper extends SQLiteOpenHelper {
         db.execSQL(ManagerAttraction.DROP_ATTRACTION_TABLE);
         db.execSQL(ManagerAttractionPays.DROP_ATTRACTION_PAYS_TABLE);
         db.execSQL(ManagerCompagnonVoyageFutur.DROP_ATTRACTION_PAYS_TABLE);
+        db.execSQL(ManagerImageProfil.DROP_IMG_TABLE);
         db.execSQL(ManagerInvitationVoyageFutur.DROP_INVITATION_TABLE);
         db.execSQL(ManagerLangue.DROP_LANGUE_TABLE);
         db.execSQL(ManagerLanguePays.DROP_LANGUE_PAYS_TABLE);

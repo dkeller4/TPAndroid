@@ -1,6 +1,27 @@
 <resources>
     <string name="app_name">CompaVoyage</string>
 
+    <string-array name="liste_langues">
+        <item>anglais</item>
+        <item>chinois</item>
+        <item>espagnol</item>
+        <item>français</item>
+        <item>italien</item>
+        <item>japonais</item>
+        <item>néerlandais</item>
+        <item>portugais</item>
+        <item>russe</item>
+    </string-array>
+
+    <string-array name="liste_preferences">
+        <item>Gastronomie</item>
+        <item>Histoire</item>
+        <item>Architecture</item>
+        <item>Nature</item>
+        <item>Technologie</item>
+        <item>Sport</item>
+    </string-array>
+
 
     <!--Activity Ajout des voyages passés-->
 

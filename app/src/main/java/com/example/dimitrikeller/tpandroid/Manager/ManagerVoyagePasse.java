@@ -96,7 +96,7 @@ public class ManagerVoyagePasse {
     public static long add(VoyagePasse entiteToAdd, Context ctx){
         long retour = -1;
         ContentValues cv = new ContentValues();
-        cv.put(VOYAGE_PASSE_ID, entiteToAdd.getIdVoyage());
+
         cv.put(VOYAGE_PASSE_ID_VOYAGEUR, entiteToAdd.getIdVoyageur());
         cv.put(VOYAGE_PASSE_ID_PAYS, entiteToAdd.getIdPays());
 
@@ -120,7 +120,7 @@ public class ManagerVoyagePasse {
 
     public static void update(VoyagePasse entite, Context ctx){
         ContentValues cv = new ContentValues();
-        cv.put(VOYAGE_PASSE_ID, entite.getIdVoyage());
+
         cv.put(VOYAGE_PASSE_ID_VOYAGEUR, entite.getIdVoyageur());
         cv.put(VOYAGE_PASSE_ID_PAYS, entite.getIdPays());
 

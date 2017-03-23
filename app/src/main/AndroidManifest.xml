@@ -31,7 +31,8 @@
         <activity android:name=".Activity.ProfilPays" />
         <activity android:name=".Activity.ProfilAutreVoyageur" />
         <activity android:name=".Activity.ProfilAttraction" />
-        <activity android:name=".Activity.EnregistrementDonnePerso"></activity>
+        <activity android:name=".Activity.EnregistrementDonnePerso" />
+        <activity android:name=".Activity.ChoixImageProfil" />
     </application>
 
 </manifest>

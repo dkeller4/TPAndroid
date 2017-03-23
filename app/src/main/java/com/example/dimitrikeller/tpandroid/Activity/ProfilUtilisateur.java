@@ -1,6 +1,9 @@
 package com.example.dimitrikeller.tpandroid.Activity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.SystemClock;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,8 +31,12 @@ import java.util.Date;
 
 public class ProfilUtilisateur extends AppCompatActivity {
 
-    Voyageur leVoyageur;
+    private final String id = "xczvxcvdwerfrsdfs";
+    SharedPreferences pref;
     int idVoyageur;
+    Voyageur leVoyageur;
+    Context ctx;
+
     ImageView pu_img_utilisateur;
     TextView pu_tv_nom, pu_tv_categorie, pu_tv_age, pu_tv_sexe, pu_tv_pays, pu_tv_listeLangue, pu_tv_listePreference;
     Button pu_btn_listeVoyageFutur, pu_btn_ajoutVoyageFutur, pu_btn_ajoutVoyagePasse;
@@ -41,7 +48,10 @@ public class ProfilUtilisateur extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil_utilisateur);
 
-        idVoyageur = 30;
+        ctx = this;
+
+        pref = PreferenceManager.getDefaultSharedPreferences(this);
+        idVoyageur = pref.getInt(id,-1);
         leVoyageur = new Voyageur();
         leVoyageur = ManagerVoyageur.getById(this, idVoyageur);
 

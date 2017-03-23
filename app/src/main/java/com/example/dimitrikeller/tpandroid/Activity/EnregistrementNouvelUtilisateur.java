@@ -48,8 +48,8 @@ public class EnregistrementNouvelUtilisateur extends AppCompatActivity {
                 stringIdentifiant=  ed_identifiant.getText().toString();
                 stringMotDePasse = ed_motDePasse.getText().toString();
 
-                if (stringIdentifiant.equals(null) || stringMotDePasse.equals(null)){
-                    Toast.makeText(ctx, "Veuillex entrer un identifiant et un mot de passe", Toast.LENGTH_SHORT);
+                if (stringIdentifiant.equals("") || stringMotDePasse.equals("")){
+                    Toast.makeText(ctx, "Veuillez entrer un identifiant et un mot de passe", Toast.LENGTH_SHORT).show();
                 }
                 else{
 
@@ -68,10 +68,9 @@ public class EnregistrementNouvelUtilisateur extends AppCompatActivity {
 
 
                     editeur = pref.edit();
-                    String valeurASauvegarder = "" + idVoyageur;
-                    editeur.putString(id,valeurASauvegarder);
+                    int valeurASauvegarder =  idVoyageur;
+                    editeur.putInt(id,valeurASauvegarder);
                     editeur.commit();
-
 
 
                     Intent intent = new Intent(EnregistrementNouvelUtilisateur.this, EnregistrementDonnePerso.class);

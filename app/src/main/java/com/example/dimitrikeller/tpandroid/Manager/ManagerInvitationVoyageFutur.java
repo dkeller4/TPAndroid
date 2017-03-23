@@ -145,7 +145,7 @@ public class ManagerInvitationVoyageFutur {
     public static long add(InvitationVoyageFutur entiteToAdd, Context ctx){
         long retour = -1;
         ContentValues cv = new ContentValues();
-        cv.put(INVITATION_ID, entiteToAdd.getIdInvitation());
+
         cv.put(INVITATION_ID_VOYAGE, entiteToAdd.getIdVoyageFutur());
         cv.put(INVITATION_ID_VOYAGEUR_ENVOYEUR, entiteToAdd.getIdVoyageurEnvoyeur());
         cv.put(INVITATION_ID_VOYAGEUR_RECEVEUR, entiteToAdd.getIdVoyageurReceveur());
@@ -173,7 +173,7 @@ public class ManagerInvitationVoyageFutur {
 
     public static void update(InvitationVoyageFutur entite, Context ctx){
         ContentValues cv = new ContentValues();
-        cv.put(INVITATION_ID,entite.getIdInvitation());
+
         cv.put(INVITATION_ID_VOYAGE, entite.getIdVoyageFutur());
         cv.put(INVITATION_ID_VOYAGEUR_ENVOYEUR, entite.getIdVoyageurEnvoyeur());
         cv.put(INVITATION_ID_VOYAGEUR_RECEVEUR, entite.getIdVoyageurReceveur());
