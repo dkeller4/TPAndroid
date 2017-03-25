@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageButton
+        <ImageView
             android:id="@+id/vp_listeVoyageFutur_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,7 +35,8 @@
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold"
                 android:textSize="20dp"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:layout_gravity="center"/>
 
             <TextView
                 android:id="@+id/vp_listeVoyageFutur_tv_dateDepart"
@@ -62,29 +63,6 @@
 
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/vp_listeVoyageFutur_btn_invitation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="consulter invitations"
-            android:layout_margin="5dp"
-            android:background="@color/colorAccent"/>
-
-        <Button
-            android:id="@+id/vp_listeVoyageFutur_btn_compagnon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="mes compagnons"
-            android:layout_margin="5dp"
-            android:background="@color/colorAccent"/>
-
-    </LinearLayout>
 
 </LinearLayout>

@@ -1,9 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.dimitrikeller.tpandroid.Activity.ProfilAttraction">
+    tools:context="com.example.dimitrikeller.tpandroid.Activity.ProfilAttraction"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
 
-</android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/pa_nom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nom"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:gravity="center"/>
+
+    <ImageView
+        android:id="@+id/pa_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/att_hiroshima"
+        android:adjustViewBounds="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/pa_ville"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Ville"
+                android:textSize="18dp"
+                android:layout_marginBottom="20dp"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/pa_duree"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="duree"
+                android:textSize="18dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/pa_gratuit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Gratuit"
+                android:textSize="18dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/pa_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Description"
+                android:textSize="18dp"
+                android:layout_marginBottom="20dp"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/pa_tel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Telephone"
+                android:textSize="18dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/pa_web"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Web"
+                android:textSize="18dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

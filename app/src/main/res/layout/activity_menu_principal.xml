@@ -23,7 +23,7 @@
         android:id="@+id/mp_pays"
         android:layout_width="245dp"
         android:layout_height="140dp"
-        android:text="Découvrer les pays"
+        android:text="Explorer les pays"
         tools:layout_editor_absoluteX="141dp"
         tools:layout_editor_absoluteY="-5dp"
         android:layout_alignParentTop="true"
@@ -54,6 +54,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:background="@color/PrimShade3"
-        android:layout_above="@+id/mp_compas" />
+        android:layout_above="@+id/mp_compas"
+        android:textColor="#fff"/>
 
 </RelativeLayout>

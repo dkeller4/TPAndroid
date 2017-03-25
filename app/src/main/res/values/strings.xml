@@ -53,9 +53,6 @@
     <string name="ajout_voyage_futur_retour">Date de retour</string>
 
 
-    <declare-styleable name="Vp_profil_pays_bref">
-
-    </declare-styleable>
 
 
 </resources>

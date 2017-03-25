@@ -122,6 +122,7 @@ public class ManagerVoyageFutur {
         long retour = -1;
         ContentValues cv = new ContentValues();
         cv.put(VOYAGE_FUTUR_ID_VOYAGEUR, entiteToAdd.getIdVoyageurPrincipal());
+        cv.put(VOYAGE_FUTUR_ID_PAYS,entiteToAdd.getIdPays());
         cv.put(VOYAGE_FUTUR_DATE_DEPART, entiteToAdd.getDateDepart());
         cv.put(VOYAGE_FUTUR_DATE_RETOUR, entiteToAdd.getDateRetour());
         cv.put(VOYAGE_FUTUR_FLEXIBLE, entiteToAdd.getEstFlexible());

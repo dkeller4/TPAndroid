@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Menu Principal"
+        android:id="@+id/menu_versMenu"/>
+
+    <item
+        android:title="Votre profil"
+        android:id="@+id/menu_versProfilUtilisateur"/>
+
+    <item
+        android:title="Explorer les pays"
+        android:id="@+id/menu_versBrowsePays"/>
+
+    <item
+        android:title="Liste des voyageurs"
+        android:id="@+id/menu_versBrowseVoyageur"/>
+
+    <item
+        android:title="Compas Voyage"
+        android:id="@+id/menu_versSelecteurDestination"/>
+
+</menu>

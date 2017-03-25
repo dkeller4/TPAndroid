@@ -1,6 +1,7 @@
 package com.example.dimitrikeller.tpandroid.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.annotation.LayoutRes;
@@ -13,8 +14,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.dimitrikeller.tpandroid.Activity.AjoutCompgnonListeVoyageur;
+import com.example.dimitrikeller.tpandroid.Activity.MesVoyagesFuturs;
 import com.example.dimitrikeller.tpandroid.Entite.Pays;
 import com.example.dimitrikeller.tpandroid.Entite.VoyageFutur;
 import com.example.dimitrikeller.tpandroid.Manager.ManagerPays;
@@ -34,7 +38,7 @@ import java.util.List;
 public class ListeVoyageFuturAdapter extends ArrayAdapter<VoyageFutur> {
     int idLayout;
     Context ctx;
-    ImageButton vp_lvf_img;
+    ImageView vp_lvf_img;
     TextView vp_lvf_tv_nom, vp_lvf_tv_dateDepart, vp_lvf_tv_dateRetour, vp_lvf_tv_complet;
     Button vp_lvf_btn_invitation, vp_lvf_btn_compagnon;
     Date dateDep, dateRet;
@@ -70,11 +74,11 @@ public class ListeVoyageFuturAdapter extends ArrayAdapter<VoyageFutur> {
         imgIdressource = ctx.getResources().getIdentifier(name, "drawable", "com.example.dimitrikeller.tpandroid");
 
 
-        vp_lvf_img = (ImageButton) convertView.findViewById(R.id.vp_listeVoyageFutur_img);
+        vp_lvf_img = (ImageView) convertView.findViewById(R.id.vp_listeVoyageFutur_img);
         vp_lvf_img.setImageResource(imgIdressource);
 
         vp_lvf_tv_nom = (TextView) convertView.findViewById(R.id.vp_listeVoyageFutur_tv_nomPays);
-        vp_lvf_tv_nom.setText(Integer.parseInt(ManagerPays.getById(ctx, vf.getIdPays()).getNom()));
+        vp_lvf_tv_nom.setText(lePays.getNom());
 
         dateDepart = dateRetour = null;
         SimpleDateFormat dates = new SimpleDateFormat("dd/MM/yyyy");
@@ -104,9 +108,6 @@ public class ListeVoyageFuturAdapter extends ArrayAdapter<VoyageFutur> {
         }
 
 
-        vp_lvf_btn_invitation = (Button) convertView.findViewById(R.id.vp_listeVoyageFutur_btn_invitation);
-
-        vp_lvf_btn_compagnon = (Button) convertView.findViewById(R.id.vp_listeVoyageFutur_btn_compagnon);
 
         return convertView;
     }
