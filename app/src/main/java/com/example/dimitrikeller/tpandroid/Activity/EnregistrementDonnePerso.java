@@ -55,7 +55,7 @@ public class EnregistrementDonnePerso extends AppCompatActivity {
     String[] listeNomPays;
     ArrayList<Langue> lesLangues;
     ArrayList<Preference> lesPreferences;
-Context ctx;
+    Context ctx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,6 +170,7 @@ Context ctx;
                 final String date = ""+day+"/"+month+"/"+year;
                 Log.d("debug", date);
 
+
                 Voyageur voy = new Voyageur();
                 voy.setIdVoyageur(idVoyageur);
                 voy.setNom(ed_nom.getText().toString());
@@ -184,10 +185,16 @@ Context ctx;
                 }
                 voy.setCategorieVoyageur("Débutant");
                 voy.setRessImgProfil("pr_pika");
-                ManagerVoyageur.add(voy, ctx);
 
-                Intent intent = new Intent(EnregistrementDonnePerso.this, ChoixImageProfil.class);
-                startActivity(intent);
+                if (voy.getNom().equals("") || voy.getPenom().equals("") || voy.getSexe().equals("") ||
+                        voy.getDateNaissance().equals("") ||  voy.getPaysNaissance().equals("")){
+                    Toast.makeText(ctx, "Veuillez entrer toutes les informations", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    ManagerVoyageur.add(voy, ctx);
+                    Intent intent = new Intent(EnregistrementDonnePerso.this, ChoixImageProfil.class);
+                    startActivity(intent);
+                }
             }
         });
 

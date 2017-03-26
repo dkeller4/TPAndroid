@@ -34,7 +34,10 @@
         <activity android:name=".Activity.EnregistrementDonnePerso" />
         <activity android:name=".Activity.ChoixImageProfil" />
         <activity android:name=".Activity.MenuPrincipal" />
-        <activity android:name=".Activity.SelecteurDeDestination"></activity>
+        <activity android:name=".Activity.SelecteurDeDestination" />
+        <activity android:name=".Activity.ProfilVoyageFutur" />
+        <activity android:name=".Activity.EnvoyerInvitationVoyage" />
+        <activity android:name=".Activity.ConsultationInvitationVoyage"></activity>
     </application>
 
 </manifest>

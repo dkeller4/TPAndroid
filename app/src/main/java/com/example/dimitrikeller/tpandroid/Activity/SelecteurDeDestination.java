@@ -77,7 +77,7 @@ public class SelecteurDeDestination extends AppCompatActivity {
                 intent.putExtra("idPays", idPaysToGo);
                 startActivity(intent);
             }
-        }, 4500);
+        }, 2000);
 
 
 

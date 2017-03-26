@@ -1,54 +1,20 @@
 package com.example.dimitrikeller.tpandroid.Activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
-import com.example.dimitrikeller.tpandroid.Adapter.ListeBrowseVoyageurAdapter;
-import com.example.dimitrikeller.tpandroid.Entite.Voyageur;
-import com.example.dimitrikeller.tpandroid.Manager.ManagerVoyageur;
 import com.example.dimitrikeller.tpandroid.R;
 
-import java.util.List;
-
-public class BrowseListeVoyageur extends AppCompatActivity {
-
-    Context ctx;
-    ListeBrowseVoyageurAdapter voyAdapt;
-    ListView lv;
-    List<Voyageur> lesVoy;
+public class EnvoyerInvitationVoyage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_browse_liste_voyageur);
+        setContentView(R.layout.activity_envoyer_invitation_voyage);
 
-        ctx = this;
-
-        lv = (ListView) findViewById(R.id.listeVoyageur_lv);
-
-        lesVoy = ManagerVoyageur.getAll(ctx);
-        voyAdapt = new ListeBrowseVoyageurAdapter(ctx, R.layout.vue_perso_liste_voyageurs, lesVoy);
-        lv.setAdapter(voyAdapt);
-
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                int idVoy = lesVoy.get(position).getIdVoyageur();
-
-                Intent intent = new Intent(BrowseListeVoyageur.this, ProfilAutreVoyageur.class);
-                intent.putExtra("idVoyageur", idVoy);
-                startActivity(intent);
-
-            }
-        });
 
     }
 
@@ -84,5 +50,6 @@ public class BrowseListeVoyageur extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
 }

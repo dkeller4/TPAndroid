@@ -53,7 +53,8 @@
                 android:layout_height="150dp"
                 android:calendarViewShown="false"
                 android:completionThreshold="1"
-                android:datePickerMode="spinner"></DatePicker>
+                android:datePickerMode="spinner"
+                android:layout_gravity="center"></DatePicker>
 
             <TextView
                 android:layout_width="match_parent"
@@ -69,6 +70,7 @@
                 android:calendarViewShown="false"
                 android:completionThreshold="1"
                 android:datePickerMode="spinner"
+                android:layout_gravity="center"
                 >
             </DatePicker>
 
@@ -99,27 +101,7 @@
                 android:background="@color/colorAccent"
                 android:layout_margin="5sp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/avf_btn_trouver"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Trouver un compagnon"
-                    android:layout_weight="50"
-                    android:background="@color/colorAccent"
-                    android:layout_margin="5sp"/>
-                <Button
-                    android:id="@+id/avf_btn_ajouter"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ajouter un compagnon"
-                    android:layout_weight="50"
-                    android:background="@color/colorAccent"
-                    android:layout_margin="5sp"/>
-            </LinearLayout>
+
 
         </LinearLayout>
     </ScrollView>

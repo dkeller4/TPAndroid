@@ -41,7 +41,7 @@ public class AjoutVoyageFutur extends AppCompatActivity {
     private AutoCompleteTextView actv;
     String[] listeNomPays;
     List<Pays> lesPays;
-    Button btn_trouver, btn_ajout, btn_soumettre;
+    Button btn_soumettre;
     VoyageFutur vf;
     String dateDepart, dateRetour;
     DatePicker dpDepart, dpRetour;
@@ -63,8 +63,6 @@ public class AjoutVoyageFutur extends AppCompatActivity {
         actv = (AutoCompleteTextView) findViewById(R.id.avf_autoCompleteTextView1);
         dpDepart = (DatePicker) findViewById(R.id.avf_dDepart);
         dpRetour = (DatePicker) findViewById(R.id.avf_dRetour);
-        btn_ajout = (Button) findViewById(R.id.avf_btn_ajouter);
-        btn_trouver = (Button) findViewById(R.id.avf_btn_trouver);
         btn_soumettre = (Button) findViewById(R.id.avf_btn_soumettre);
         cb_complet = (CheckBox) findViewById(R.id.avf_compa);
         cb_flexible = (CheckBox) findViewById(R.id.avf_flex);
@@ -81,40 +79,6 @@ public class AjoutVoyageFutur extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String> (this,android.R.layout.simple_list_item_1,listeNomPays);
         actv.setAdapter(adapter);
 
-
-
-
-
-        View.OnClickListener listener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent;
-
-                listeVoyageFutur = ManagerVoyageFutur.getAllByIdVoyageur(ctx, idVoyageur);
-
-                idVoyageFutur =0;
-
-                for (VoyageFutur lvf: listeVoyageFutur){
-                    idVoyageFutur = lvf.getIdVoyageFutur();
-                }
-                Log.d("Debug1","" +idVoyageur);
-                Log.d ("Debug2", ""+ idVoyageFutur);
-                intent = new Intent(AjoutVoyageFutur.this, MenuPrincipal.class);
-                switch (v.getId()){
-                    case R.id.avf_btn_ajouter:
-                        intent = new Intent (AjoutVoyageFutur.this, AjoutCompgnonListeVoyageur.class );
-                        break;
-                    case R.id.avf_btn_trouver:
-                        intent = new Intent(AjoutVoyageFutur.this, AjoutCompagnonParInvitation.class);
-                        break;
-
-                }
-                intent.putExtra("idVoyageFutur",idVoyageFutur );
-                startActivity(intent);
-
-            }
-        };
 
         btn_soumettre.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,13 +122,25 @@ public class AjoutVoyageFutur extends AppCompatActivity {
                     vf.setEstComplet(false);
                 }
 
+
                 ManagerVoyageFutur.add(vf, ctx);
+
+                listeVoyageFutur = ManagerVoyageFutur.getAllByIdVoyageur(ctx, idVoyageur);
+
+                idVoyageFutur =0;
+
+                for (VoyageFutur lvf: listeVoyageFutur){
+                    idVoyageFutur = lvf.getIdVoyageFutur();
+                }
+
+                Intent intent = new Intent (AjoutVoyageFutur.this, ProfilVoyageFutur.class);
+                intent.putExtra("idVf", idVoyageFutur);
+                startActivity(intent);
             }
         });
 
 
-        btn_ajout.setOnClickListener(listener) ;
-        btn_trouver.setOnClickListener(listener) ;
+
     }
 
     @Override

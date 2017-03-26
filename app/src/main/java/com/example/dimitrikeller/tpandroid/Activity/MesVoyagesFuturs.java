@@ -42,7 +42,7 @@ public class MesVoyagesFuturs extends AppCompatActivity {
 
         lv = (ListView) findViewById(R.id.mvf_listView);
 
-        List<VoyageFutur> vf = ManagerVoyageFutur.getAllByIdVoyageur(ctx,idVoyageur);
+        final List<VoyageFutur> vf = ManagerVoyageFutur.getAllByIdVoyageur(ctx,idVoyageur);
 
         if(vf.size()>0) {
             mvf_tv_vide = (TextView) findViewById(R.id.mvf_tv_vide);
@@ -55,7 +55,11 @@ public class MesVoyagesFuturs extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int idVoyageFuture = vf.get(position).getIdVoyageFutur();
 
+                Intent intent = new Intent(MesVoyagesFuturs.this, ProfilVoyageFutur.class);
+                intent.putExtra("idVf", idVoyageFuture);
+                startActivity(intent);
 
             }
         });

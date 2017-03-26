@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.TextView;
 
 import com.example.dimitrikeller.tpandroid.Entite.Pays;
 import com.example.dimitrikeller.tpandroid.Entite.VoyagePasse;
@@ -81,7 +82,8 @@ public class AjoutVoyagePasse extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 regionSelect= parent.getSelectedItem().toString();
-                Log.d("Debug", regionSelect);
+
+
                 if (!regionSelect.equals("Monde")) {
 
                     lesPaysSelect = new ArrayList<Pays>();
@@ -108,9 +110,9 @@ public class AjoutVoyagePasse extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
-                view.setBackgroundColor(Color.BLUE);
-                view.invalidate();
+                lesPaysSelect.get(position).setNom("Visité");
+                adaptGv = new ListePaysDrapeauxAdapter(ctx, R.layout.vue_perso_ajout_voyage_passe, lesPaysSelect);
+                gv.setAdapter(adaptGv);
 
                 paysVisite = new ArrayList<>();
                 int pays= lesPaysSelect.get(position).getIdPays();
@@ -126,7 +128,7 @@ public class AjoutVoyagePasse extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (paysVisite !=null) {
+
                     for (VoyagePasse vp : paysVisite) {
                         ManagerVoyagePasse.add(vp, ctx);
                     }
@@ -138,7 +140,8 @@ public class AjoutVoyagePasse extends AppCompatActivity {
                     for (VoyagePasse vp : voyageUtilisateur) {
                         cpt++;
                     }
-                    Log.d("Debug", "" + cpt);
+
+
                     Voyageur voy = new Voyageur();
                     voy = ManagerVoyageur.getById(ctx, idVoyageur);
 
@@ -154,10 +157,9 @@ public class AjoutVoyagePasse extends AppCompatActivity {
                     if (cpt >= 100)
                         voy.setCategorieVoyageur("Citoyen du monde");
 
-                    Log.d("Debug", voy.getCategorieVoyageur());
                     ManagerVoyageur.update(voy, ctx);
-                }
-                Intent intent = new Intent(AjoutVoyagePasse.this, MenuPrincipal.class);
+
+                Intent intent = new Intent(AjoutVoyagePasse.this,ProfilUtilisateur.class);
                 startActivity(intent);
             }
         });
