@@ -114,7 +114,7 @@ public class ManagerCompagnonVoyageFutur {
     public static void delete(int id1,int id2, Context ctx){
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.delete(COMPAGNON_VOYAGE_FUTUR_TABLE, COMPAGNON_VOYAGE_FUTUR_ID_VOYAGE + " = ? AND " + COMPAGNON_VOYAGE_FUTUR_ID_VOYAGEUR + " = ?", new String[]{String.valueOf(id1), String.valueOf(id2)});
-
+        ConnexionBD.close();
     }
 
     // Modification
@@ -126,7 +126,7 @@ public class ManagerCompagnonVoyageFutur {
 
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.update(COMPAGNON_VOYAGE_FUTUR_TABLE, cv, COMPAGNON_VOYAGE_FUTUR_ID_VOYAGE + " = ? AND " + COMPAGNON_VOYAGE_FUTUR_ID_VOYAGEUR + " = ?", new String[]{String.valueOf(entite.getIdVoyageFutur()), String.valueOf(entite.getIdVoyageurCompagnon())});
-
+        ConnexionBD.close();
     }
 
 

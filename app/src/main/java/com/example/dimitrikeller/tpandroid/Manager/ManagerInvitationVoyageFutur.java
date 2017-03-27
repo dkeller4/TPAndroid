@@ -166,7 +166,7 @@ public class ManagerInvitationVoyageFutur {
     public static void delete(int id1, Context ctx){
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.delete(INVITATION_TABLE, INVITATION_ID + " = ? ", new String[]{String.valueOf(id1)});
-
+        ConnexionBD.close();
     }
 
     // Modification
@@ -182,7 +182,7 @@ public class ManagerInvitationVoyageFutur {
 
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.update(INVITATION_TABLE, cv, INVITATION_ID + " = ? " , new String[]{String.valueOf(entite.getIdInvitation())});
-
+        ConnexionBD.close();
     }
 
 

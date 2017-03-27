@@ -27,6 +27,11 @@ public class ManagerPreferenceVoyageur {
             PREFERENCE_VOYAGEUR_ID_VOYAGEUR + " INTEGER);";
 
 
+    public static String queryInsertDemo = "INSERT INTO `preferenceVoyageur` (idVoyageur,idPreference) VALUES (1,1),\n" +
+            " (1,2),\n" +
+            " (2,1),\n" +
+            " (2,5);";
+
     public static String DROP_PREFERENCE_PAYS_TABLE = "drop table if exists "+ PREFERENCE_VOYAGEUR_TABLE ;
 
     public static String queryGetAll = "select * from "+ PREFERENCE_VOYAGEUR_TABLE;
@@ -111,7 +116,7 @@ public class ManagerPreferenceVoyageur {
     public static void delete(int id1, int id2, Context ctx){
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.delete(PREFERENCE_VOYAGEUR_TABLE, PREFERENCE_VOYAGEUR_ID_PREFERENCE + " = ? AND " + PREFERENCE_VOYAGEUR_ID_VOYAGEUR + " = ?", new String[]{String.valueOf(id1), String.valueOf(id2)});
-
+        ConnexionBD.close();
     }
 
     // Modification
@@ -123,7 +128,7 @@ public class ManagerPreferenceVoyageur {
 
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.update(PREFERENCE_VOYAGEUR_TABLE, cv, PREFERENCE_VOYAGEUR_ID_PREFERENCE + " = ? AND " + PREFERENCE_VOYAGEUR_ID_VOYAGEUR + " = ?" , new String[]{String.valueOf(entite.getIdPreference()), String.valueOf(entite.getIdVoyageur())});
-
+        ConnexionBD.close();
     }
 
 

@@ -36,6 +36,7 @@ public class ManagerVoyageFutur {
             VOYAGE_FUTUR_FLEXIBLE + " INTEGER, "+
             VOYAGE_FUTUR_COMPLET + " INTEGER);";
 
+    public static String queryInsertDemo = "INSERT INTO `VoyageFutur` (id,idPays,idVoyageur,dateDepart,dateRetour,estFlexible,estComplet) VALUES (1,67,1,'28/06/2017','05/07/2017',0,1);";
 
     public static String DROP_VOYAGE_FUTUR_TABLE = "drop table if exists "+ VOYAGE_FUTUR_TABLE ;
 
@@ -142,7 +143,7 @@ public class ManagerVoyageFutur {
     public static void delete(int id, Context ctx){
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.delete(VOYAGE_FUTUR_TABLE, VOYAGE_FUTUR_ID + " = ?", new String[]{String.valueOf(id)});
-
+        ConnexionBD.close();
     }
 
     // Modification
@@ -157,7 +158,7 @@ public class ManagerVoyageFutur {
 
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.update(VOYAGE_FUTUR_TABLE, cv, VOYAGE_FUTUR_ID + " = ?", new String[]{String.valueOf(entite.getIdVoyageFutur())});
-
+        ConnexionBD.close();
     }
 
 

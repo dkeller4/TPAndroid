@@ -47,6 +47,7 @@ public class BDHelper extends SQLiteOpenHelper {
         db.execSQL(ManagerLanguePays.LANGUE_PAYS_TABLE_CREATE);
         db.execSQL(ManagerLanguePays.queryINSERT);
         db.execSQL(ManagerLangueVoyageur.LANGUE_VOYAGEUR_TABLE_CREATE);
+        db.execSQL(ManagerLangueVoyageur.queryInsertDemo);
         db.execSQL(ManagerPays.PAYS_TABLE_CREATE);
         db.execSQL(ManagerPays.queryINSERT);
         db.execSQL(ManagerPreference.PREFERENCE_TABLE_CREATE);
@@ -54,10 +55,15 @@ public class BDHelper extends SQLiteOpenHelper {
         db.execSQL(ManagerPreferencePays.PREFERENCE_PAYS_TABLE_CREATE);
         db.execSQL(ManagerPreferencePays.queryINSERT);
         db.execSQL(ManagerPreferenceVoyageur.PREFERENCE_VOYAGEUR_TABLE_CREATE);
+        db.execSQL(ManagerPreferenceVoyageur.queryInsertDemo);
         db.execSQL(ManagerVoyageFutur.VOYAGE_FUTUR_CREATE);
+        db.execSQL(ManagerVoyageFutur.queryInsertDemo);
         db.execSQL(ManagerVoyagePasse.VOYAGE_PASSE_TABLE_CREATE);
+        db.execSQL(ManagerVoyagePasse.queryInsertDemo);
         db.execSQL(ManagerVoyageur.VOYAGEUR_TABLE_CREATE);
+        db.execSQL(ManagerVoyageur.queryInsertDemo);
         db.execSQL(ManagerUtilisateur.VOYAGEUR_TABLE_CREATE);
+        db.execSQL(ManagerUtilisateur.queryInsertDemo);
     }
 
     @Override

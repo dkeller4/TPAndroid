@@ -40,6 +40,9 @@ public class ManagerVoyageur {
             VOYAGEUR_IMG_PROFIL + " TEXT, "+
             VOYAGEUR_CATEGORIE + " TEXT);";
 
+    public static String queryInsertDemo = "INSERT INTO 'Voyageur' (id,prenom,nom,dateNaissance,paysNaissance,sexe,imgProfil,categorie) VALUES (1,'Marianne','Caron','29/10/1987','Canada','f','pr_pika','Grand explorateur'),\n" +
+            " (2,'David','Jacques','08/10/1987','Canada','h','pr_champignon','Petit Explorateur');";
+
     public static String DROP_VOYAGEUR_TABLE = "drop table if exists " + VOYAGEUR_TABLE;
 
     public static String queryGetAll = "select * from " + VOYAGEUR_TABLE;
@@ -117,7 +120,7 @@ public class ManagerVoyageur {
     public static void delete(int id, Context ctx){
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.delete(VOYAGEUR_TABLE, VOYAGEUR_ID + " = ?", new String[]{String.valueOf(id)});
-
+        ConnexionBD.close();
     }
 
     // Modification
@@ -135,7 +138,7 @@ public class ManagerVoyageur {
 
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.update(VOYAGEUR_TABLE, cv, VOYAGEUR_ID + " = ?", new String[]{String.valueOf(entite.getIdVoyageur())});
-
+        ConnexionBD.close();
     }
 
 

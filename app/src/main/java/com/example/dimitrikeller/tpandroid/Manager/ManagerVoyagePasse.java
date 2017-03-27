@@ -28,6 +28,32 @@ public class ManagerVoyagePasse {
             VOYAGE_PASSE_ID_PAYS + " INTEGER);";
 
 
+    public static String queryInsertDemo = "INSERT INTO 'voyagePasse' (id,idVoyageur,idPays) VALUES (1,1,5),\n" +
+            " (2,1,16),\n" +
+            " (3,1,24),\n" +
+            " (4,1,41),\n" +
+            " (5,1,46),\n" +
+            " (6,1,49),\n" +
+            " (7,1,53),\n" +
+            " (8,1,59),\n" +
+            " (9,1,63),\n" +
+            " (10,1,67),\n" +
+            " (11,1,88),\n" +
+            " (12,1,105),\n" +
+            " (13,1,107),\n" +
+            " (14,1,129),\n" +
+            " (15,1,142),\n" +
+            " (16,1,167),\n" +
+            " (17,1,177),\n" +
+            " (18,1,182),\n" +
+            " (19,1,204),\n" +
+            " (20,1,226),\n" +
+            " (21,2,41),\n" +
+            " (22,2,50),\n" +
+            " (23,2,63),\n" +
+            " (24,2,107),\n" +
+            " (25,2,106);";
+
     public static String DROP_VOYAGE_PASSE_TABLE = "drop table if exists "+ VOYAGE_PASSE_TABLE ;
 
     public static String queryGetAll = "select * from "+ VOYAGE_PASSE_TABLE;
@@ -112,7 +138,7 @@ public class ManagerVoyagePasse {
     public static void delete(int id, Context ctx){
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.delete(VOYAGE_PASSE_TABLE, VOYAGE_PASSE_ID + " = ?", new String[]{String.valueOf(id)});
-
+        ConnexionBD.close();
     }
 
     // Modification
@@ -125,7 +151,7 @@ public class ManagerVoyagePasse {
 
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.update(VOYAGE_PASSE_TABLE, cv, VOYAGE_PASSE_ID + " = ?", new String[]{String.valueOf(entite.getIdVoyage())});
-
+        ConnexionBD.close();
     }
 
 

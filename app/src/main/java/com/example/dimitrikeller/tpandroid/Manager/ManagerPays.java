@@ -70,7 +70,7 @@ public class ManagerPays {
             " (31,'Bolivie',9947418,'Amérique du sud','Sucre','Boliviano','drap_bolivia','pays_enconstruction1'),\n" +
             " (32,'Bosnie Herzégovine',4590000,'Europe','Sarajevo','Marka','drap_bosnia_and_herzegovina','pays_enconstruction2'),\n" +
             " (33,'Botswana',2029307,'Afrique','Gaborone','Pula','drap_botswana','pays_enconstruction4'),\n" +
-            " (34,'Brésil',201103330,'Amérique du sud','Brasilia','Real','drap_brazil','pays_brésil'),\n" +
+            " (34,'Brésil',201103330,'Amérique du sud','Brasilia','Real','drap_brazil','pays_bresil'),\n" +
             " (35,'Brunei',395027,'Asie du sud est','Bandar Seri Begawan','Dollar','drap_brunei','pays_enconstruction1'),\n" +
             " (36,'Bulgarie',7148785,'Europe','Sofia','Lev','drap_bulgaria','pays_enconstruction2'),\n" +
             " (37,'Burkina Faso',16241811,'Afrique','Ouagadougou','Franc','drap_burkina_faso','pays_enconstruction4'),\n" +
@@ -275,7 +275,6 @@ public class ManagerPays {
     public static String DROP_PAYS_TABLE = "drop table if exists "+ PAYS_TABLE ;
 
     public static String queryGetAll = "select * from "+ PAYS_TABLE;
-
 
     public static ArrayList<Pays> getAll(Context ctx){
         ArrayList<Pays> listePays = new ArrayList<>();

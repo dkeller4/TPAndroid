@@ -87,7 +87,7 @@ public class ManagerImageProfil {
     public static void delete(int id, Context ctx){
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.delete(IMG_TABLE, IMG_ID + " = ?", new String[]{String.valueOf(id)});
-
+        ConnexionBD.close();
     }
 
     // Modification
@@ -99,7 +99,7 @@ public class ManagerImageProfil {
 
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.update(IMG_TABLE, cv, IMG_ID + " = ?", new String[]{String.valueOf(img.getIdImage())});
-
+        ConnexionBD.close();
     }
 
 

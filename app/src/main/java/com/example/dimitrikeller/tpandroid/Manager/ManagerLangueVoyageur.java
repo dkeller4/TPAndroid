@@ -27,6 +27,11 @@ public class ManagerLangueVoyageur {
             LANGUE_VOYAGEUR_ID_VOYAGEUR + " INTEGER);";
 
 
+    public static String queryInsertDemo = "INSERT INTO `langueVoyageur` (idLangue,idVoyageur) VALUES (37,1),\n" +
+            " (37,2),\n" +
+            " (47,1),\n" +
+            " (47,2);";
+
     public static String DROP_LANGUE_PAYS_TABLE = "drop table if exists "+ LANGUE_VOYAGEUR_TABLE ;
 
     public static String queryGetAll = "select * from "+ LANGUE_VOYAGEUR_TABLE;
@@ -112,7 +117,7 @@ public class ManagerLangueVoyageur {
     public static void delete(int id1, int id2, Context ctx){
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.delete(LANGUE_VOYAGEUR_TABLE, LANGUE_VOYAGEUR_ID_LANGUE + " = ? AND " + LANGUE_VOYAGEUR_ID_VOYAGEUR + " = ?", new String[]{String.valueOf(id1), String.valueOf(id2)});
-
+        ConnexionBD.close();
     }
 
     // Modification
@@ -124,7 +129,7 @@ public class ManagerLangueVoyageur {
 
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.update(LANGUE_VOYAGEUR_TABLE, cv, LANGUE_VOYAGEUR_ID_LANGUE + " = ? AND " + LANGUE_VOYAGEUR_ID_VOYAGEUR + " = ?" , new String[]{String.valueOf(entite.getIdLangue()), String.valueOf(entite.getIdVoyageur())});
-
+        ConnexionBD.close();
     }
 
 }

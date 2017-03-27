@@ -27,6 +27,8 @@ public class ManagerUtilisateur {
             UTILISATEUR_IDENTIFIANT + " TEXT, "+
             UTILISATEUR_MOTPASSE + " TEXT);";
 
+    public static String queryInsertDemo = "INSERT INTO 'utilisateur' (identifiant, motDePasse) VALUES ('dinderoti', 'patate'), ('psychic', 'pokemon');";
+
     public static String DROP_UTILISATEUR_TABLE = "drop table if exists " + UTILISATEUR_TABLE;
 
     public static String queryGetAll = "select * from " + UTILISATEUR_TABLE;
@@ -90,7 +92,7 @@ public class ManagerUtilisateur {
     public static void delete(int id, Context ctx){
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.delete(UTILISATEUR_TABLE, UTILISATEUR_ID + " = ?", new String[]{String.valueOf(id)});
-
+        ConnexionBD.close();
     }
 
     // Modification
@@ -103,7 +105,7 @@ public class ManagerUtilisateur {
 
         SQLiteDatabase bd = ConnexionBD.getBD(ctx);
         bd.update(UTILISATEUR_TABLE, cv, UTILISATEUR_ID + " = ?", new String[]{String.valueOf(entite.getIdVoyageur())});
-
+        ConnexionBD.close();
     }
 
 
